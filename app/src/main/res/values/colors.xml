@@ -9,7 +9,7 @@
     <color name="green">#F2FFE4</color>
     <color name="green1">#729343</color>
     <color name="green2">#F2FFE4</color>
-    <color name="green3">#729343</color>
+    <color name="green3">#F2FFE4</color>
     <color name="green4">#FFFFFFFF</color>
     <color name="green5">#FFFFFFFF</color>
     <color name="green6">#FFFFFFFF</color>
@@ -17,5 +17,4 @@
     <color name="green8">#FFFFFFFF</color>
     <color name="green9">#FFFFFFFF</color>
     <color name="green10">#FFFFFFFF</color>
-
 </resources>

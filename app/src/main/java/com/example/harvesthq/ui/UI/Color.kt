@@ -1,4 +1,4 @@
-package com.example.harvesthq.ui.theme
+package com.example.harvesthq.ui.UI
 
 import androidx.compose.ui.graphics.Color
 
