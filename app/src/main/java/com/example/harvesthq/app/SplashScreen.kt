@@ -1,5 +1,4 @@
-
-import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -18,31 +17,43 @@ import androidx.compose.ui.unit.dp
 import com.example.harvesthq.R
 
 @Composable
-fun AnimatedLogo() {
+fun AnimatedLogo(onAnimationEnd: () -> Unit = {}) {
     var expanded by remember { mutableStateOf(false) }
-    val green1 = colorResource(id = R.color.green1)
+    val white = colorResource(id = R.color.white)
 
-    // Use animated values
-    val scale by animateFloatAsState(if (expanded) 1.5f else 1f)
-    val alpha by animateFloatAsState(if (expanded) 0.5f else 1f)
+    val transition = updateTransition(targetState = if (expanded) 1f else 0f, label = "scaleAndAlphaTransition")
+
+    val scale by transition.animateFloat(
+        transitionSpec = {
+            tween(durationMillis = 1000, easing = FastOutLinearInEasing)
+        }
+    ) { it }
+
+    val alpha by transition.animateFloat(
+        transitionSpec = {
+            tween(durationMillis = 1000, easing = LinearOutSlowInEasing)
+        }
+    ) { it }
 
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = green1 // Set your desired background color
+        color = white
     ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .clickable { expanded = !expanded },
+                .clickable {
+                    expanded = !expanded
+                    onAnimationEnd()
+                },
             contentAlignment = Alignment.Center
         ) {
-            // Add your logo image here
             Image(
                 painter = painterResource(id = R.drawable.harvesthqlogo),
                 contentDescription = "logo",
                 modifier = Modifier
-                    .width(100.dp) // Set your desired width
-                    .height(100.dp) // Set your desired height
+                    .width(100.dp)
+                    .height(100.dp)
                     .graphicsLayer(
                         scaleX = scale,
                         scaleY = scale,
@@ -55,6 +66,6 @@ fun AnimatedLogo() {
 
 @Preview
 @Composable
-fun splashpreview(){
+fun splashpreview() {
     AnimatedLogo()
 }
