@@ -1,26 +1,24 @@
 package com.example.harvesthq
 
+import AnimatedLogo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.harvesthq.app.SplashScreen
-import com.example.harvesthq.app.SplashScreen
-import com.example.harvesthq.ui.UI.HarvestHQTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            SplashScreen()
+            AnimatedLogo()
         }
     }
+}
+@Preview
+@Composable
+fun mainactivitypreview(){
+    AnimatedLogo()
 }
 
 
