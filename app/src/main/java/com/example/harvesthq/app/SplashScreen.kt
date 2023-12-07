@@ -1,4 +1,3 @@
-
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -25,11 +24,11 @@ fun AnimatedLogo(onAnimationEnd: () -> Unit = {}) {
     LaunchedEffect(true) {
         // Zoom in
         expanded = true
-        delay(3300) // Adjust delay time based on your zoom in duration
+        delay(3000)
 
         // Zoom out
         expanded = false
-        delay(2300) // Adjust delay time based on your zoom out duration
+        delay(700)
 
         // Navigate to signup screen
         onAnimationEnd()
@@ -74,8 +73,6 @@ fun AnimatedLogo(onAnimationEnd: () -> Unit = {}) {
     }
 
 }
-
-
 @Preview
 @Composable
 fun splashpreview() {
