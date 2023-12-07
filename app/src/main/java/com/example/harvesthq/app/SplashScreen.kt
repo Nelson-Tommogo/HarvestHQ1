@@ -1,6 +1,6 @@
+
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -15,11 +15,25 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.harvesthq.R
+import kotlinx.coroutines.delay
 
 @Composable
 fun AnimatedLogo(onAnimationEnd: () -> Unit = {}) {
     var expanded by remember { mutableStateOf(false) }
     val white = colorResource(id = R.color.white)
+
+    LaunchedEffect(true) {
+        // Zoom in
+        expanded = true
+        delay(3300) // Adjust delay time based on your zoom in duration
+
+        // Zoom out
+        expanded = false
+        delay(2300) // Adjust delay time based on your zoom out duration
+
+        // Navigate to signup screen
+        onAnimationEnd()
+    }
 
     val transition = updateTransition(targetState = if (expanded) 1f else 0f, label = "scaleAndAlphaTransition")
 
@@ -31,7 +45,7 @@ fun AnimatedLogo(onAnimationEnd: () -> Unit = {}) {
 
     val alpha by transition.animateFloat(
         transitionSpec = {
-            tween(durationMillis = 1000, easing = LinearOutSlowInEasing)
+            tween(durationMillis = 300, easing = LinearOutSlowInEasing)
         }
     ) { it }
 
@@ -41,19 +55,15 @@ fun AnimatedLogo(onAnimationEnd: () -> Unit = {}) {
     ) {
         Box(
             modifier = Modifier
-                .fillMaxSize()
-                .clickable {
-                    expanded = !expanded
-                    onAnimationEnd()
-                },
+                .fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {
             Image(
                 painter = painterResource(id = R.drawable.harvesthqlogo),
                 contentDescription = "logo",
                 modifier = Modifier
-                    .width(100.dp)
-                    .height(100.dp)
+                    .width(700.dp)
+                    .height(700.dp)
                     .graphicsLayer(
                         scaleX = scale,
                         scaleY = scale,
@@ -62,10 +72,12 @@ fun AnimatedLogo(onAnimationEnd: () -> Unit = {}) {
             )
         }
     }
+
 }
+
 
 @Preview
 @Composable
 fun splashpreview() {
-    AnimatedLogo()
+
 }
