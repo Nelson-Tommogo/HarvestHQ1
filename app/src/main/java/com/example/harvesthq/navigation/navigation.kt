@@ -1,8 +1,8 @@
 package com.example.harvesthq.navigation
 
 import AnimatedLogo
-import SignupScreen
 import Login
+import SignupScreen
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -24,7 +24,9 @@ fun SetupNavigation(navController: NavHostController) {
             }
         }
         composable(Screen.SignUp.route) {
-            SignupScreen { s, s2, s3, s4 -> }
+            SignupScreen(navController = navController) { s, s2, s3, s4 ->
+                // Handle signup logic here
+            }
         }
         composable(Screen.LogIn.route) {
             Login { s, s2, s3, s4 ->  }
