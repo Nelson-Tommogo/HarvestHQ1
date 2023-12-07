@@ -7,6 +7,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
@@ -85,9 +86,14 @@ fun SignupScreen(onSignup: (String, String, String, String) -> Unit) {
 
         // Button for signup
         Button(
-            onClick = { onSignup(firstName, lastName, email, password) },
+            onClick = {
+                onSignup(firstName, lastName, email, password)
+                // Navigate to the login screen
+                navController.navigate("login") // "login" is the route to your login screen
+            },
             modifier = Modifier.fillMaxWidth()
-        ) {
+        )
+        {
             Text("Sign Up")
         }
     }

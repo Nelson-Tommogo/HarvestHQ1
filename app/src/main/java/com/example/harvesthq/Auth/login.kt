@@ -65,6 +65,10 @@ fun Login(onSignup: (String, String, String, String) -> Unit) {
     }
 }
 
+fun onSignup(email: String, password: String) {
+    TODO("Not yet implemented")
+}
+
 @Preview(showBackground = true)
 @Composable
 fun loginPreview() {
