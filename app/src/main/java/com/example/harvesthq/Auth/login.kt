@@ -15,14 +15,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.harvesthq.R
-import com.example.harvesthq.ui.UI.HarvestHQTheme
 
+
+
+
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Login(onSignup: (String, String, String, String) -> Unit) {
+fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -47,10 +50,11 @@ fun Login(onSignup: (String, String, String, String) -> Unit) {
 
         Text(
             text = "Sign In",
-            fontSize = 24.sp, // Adjust the size as needed
-            fontWeight = FontWeight.Bold, // Adjust the weight as needed
-            modifier = Modifier.padding(bottom = 10.dp)
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 16.dp)
         )
+
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
@@ -61,8 +65,9 @@ fun Login(onSignup: (String, String, String, String) -> Unit) {
             ),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(bottom = 10.dp)
+                .padding(bottom = 16.dp)
         )
+
         OutlinedTextField(
             value = password,
             onValueChange = { password = it },
@@ -74,12 +79,15 @@ fun Login(onSignup: (String, String, String, String) -> Unit) {
             ),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(bottom = 10.dp)
+                .padding(bottom = 16.dp)
         )
 
-        // Button for signup
+        // Button for sign-in
         ElevatedButton(
-            onClick = { onSignup(email, password) },
+            onClick = {
+                onlogin(email, password)
+                navController.navigate("resetpassword")
+            },
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.elevatedButtonColors(
                 contentColor = colorResource(id = R.color.green1)
@@ -87,20 +95,6 @@ fun Login(onSignup: (String, String, String, String) -> Unit) {
         ) {
             Text("Sign In")
         }
-
-    }
-}
-
-fun onSignup(email: String, password: String) {
-
-    TODO("Not yet implemented")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun loginPreview() {
-    HarvestHQTheme {
-        Login { s, s2, s3, s4 ->  }
     }
 }
 

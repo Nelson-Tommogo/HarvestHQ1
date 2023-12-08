@@ -5,10 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -18,24 +15,22 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.harvesthq.R
-import com.example.harvesthq.ui.UI.HarvestHQTheme
 
-@Composable
-fun reset(onSignup: (String, String, String, String) -> Unit) {
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
-
+@OptIn(ExperimentalMaterial3Api::class)
+    @Composable
+    fun reset(navController: NavHostController, onreset: (String) -> Unit) {
+        var email by remember { mutableStateOf("") }
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Top
     ) {
 
         Image(
@@ -69,7 +64,7 @@ fun reset(onSignup: (String, String, String, String) -> Unit) {
 
         // Button for signup
         Button(
-            onClick = { onreRet(email, password) },
+            onClick = { onreRet(email) },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Password Reset Link")
@@ -78,15 +73,9 @@ fun reset(onSignup: (String, String, String, String) -> Unit) {
     }
 }
 
-fun onreRet(email: String, password: String) {
+fun onreRet(email: String) {
     TODO("Not yet implemented")
 }
 
-@Preview(showBackground = true)
-@Composable
-fun reset() {
-    HarvestHQTheme {
-        reset() { s, s2, s3, s4 ->  }
-    }
-}
+
 

@@ -7,12 +7,13 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.harvesthq.Auth.reset
 
 sealed class Screen(val route: String) {
     object Logo : Screen("logo")
     object SignUp : Screen("signup")
     object LogIn : Screen("login")
-    object home : Screen("navigationsample")
+    object reset : Screen("resetpassword")
 
 
 }
@@ -31,8 +32,11 @@ fun SetupNavigation(navController: NavHostController) {
             }
         }
         composable(Screen.LogIn.route) {
-            Login { s, s2, s3, s4 ->  }
+            Login(navController = navController){s, s2 ->  }
         }
-
+        composable(Screen.reset.route){
+            reset(navController = navController){s->
+            }
+        }
     }
 }
