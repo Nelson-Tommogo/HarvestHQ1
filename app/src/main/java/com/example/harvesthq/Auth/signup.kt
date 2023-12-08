@@ -2,13 +2,14 @@
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.Button
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -16,6 +17,8 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.harvesthq.R
+
 
 @Composable
 fun SignupScreen(navController: NavHostController, onSignup: (String, String, String, String) -> Unit) {
@@ -23,6 +26,9 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
     var lastName by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+    val white = colorResource(id = R.color.white)
+    val green1 = colorResource(id = R.color.green1)
+    val green2 = colorResource(id = R.color.green2)
 
     Column(
         modifier = Modifier
@@ -94,13 +100,12 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
         )
 
         // Button for signup
-        Button(
-            onClick = {
+        ElevatedButton(
+            {
                 onSignup(firstName, lastName, email, password)
                 // Navigate to the login screen
                 navController.navigate("login") // "login" is the route to your login screen
-            },
-            modifier = Modifier.fillMaxWidth()
+            }, Modifier.fillMaxWidth(),
         ) {
             Text("Sign Up")
         }

@@ -12,6 +12,8 @@ sealed class Screen(val route: String) {
     object Logo : Screen("logo")
     object SignUp : Screen("signup")
     object LogIn : Screen("login")
+    object home : Screen("navigationsample")
+
 
 }
 
@@ -31,5 +33,6 @@ fun SetupNavigation(navController: NavHostController) {
         composable(Screen.LogIn.route) {
             Login { s, s2, s3, s4 ->  }
         }
+
     }
 }

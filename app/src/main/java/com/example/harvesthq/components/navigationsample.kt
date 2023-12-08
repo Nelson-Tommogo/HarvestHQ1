@@ -1,9 +1,6 @@
 package com.example.bottomnavbarexample
 
 import android.annotation.SuppressLint
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.icons.Icons
@@ -37,45 +34,40 @@ data class TabBarItem(
     val badgeAmount: Int? = null
 )
 
-class MainActivity : ComponentActivity() {
-    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-    @OptIn(ExperimentalMaterial3Api::class)
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            // setting up the individual tabs
-            val homeTab = TabBarItem(title = "Home", selectedIcon = Icons.Filled.Home, unselectedIcon = Icons.Outlined.Home)
-            val alertsTab = TabBarItem(title = "Alerts", selectedIcon = Icons.Filled.Notifications, unselectedIcon = Icons.Outlined.Notifications, badgeAmount = 7)
-            val settingsTab = TabBarItem(title = "Settings", selectedIcon = Icons.Filled.Settings, unselectedIcon = Icons.Outlined.Settings)
-            val moreTab = TabBarItem(title = "More", selectedIcon = Icons.Filled.List, unselectedIcon = Icons.Outlined.List)
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@Composable
+fun BottomNavBarExample() {
+    // setting up the individual tabs
+    val homeTab = TabBarItem(title = "Home", selectedIcon = Icons.Filled.Home, unselectedIcon = Icons.Outlined.Home)
+    val alertsTab = TabBarItem(title = "Alerts", selectedIcon = Icons.Filled.Notifications, unselectedIcon = Icons.Outlined.Notifications, badgeAmount = 7)
+    val settingsTab = TabBarItem(title = "Settings", selectedIcon = Icons.Filled.Settings, unselectedIcon = Icons.Outlined.Settings)
+    val moreTab = TabBarItem(title = "More", selectedIcon = Icons.Filled.List, unselectedIcon = Icons.Outlined.List)
 
-            // creating a list of all the tabs
-            val tabBarItems = listOf(homeTab, alertsTab, settingsTab, moreTab)
+    // creating a list of all the tabs
+    val tabBarItems = listOf(homeTab, alertsTab, settingsTab, moreTab)
 
-            // creating our navController
-            val navController = rememberNavController()
+    // creating our navController
+    val navController = rememberNavController()
 
-            HarvestHQTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Scaffold(bottomBar = { TabView(tabBarItems, navController) }) {
-                        NavHost(navController = navController, startDestination = homeTab.title) {
-                            composable(homeTab.title) {
-                                Text(homeTab.title)
-                            }
-                            composable(alertsTab.title) {
-                                Text(alertsTab.title)
-                            }
-                            composable(settingsTab.title) {
-                                Text(settingsTab.title)
-                            }
-                            composable(moreTab.title) {
-                                MoreView()
-                            }
-                        }
+    HarvestHQTheme {
+        // A surface container using the 'background' color from the theme
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            Scaffold(bottomBar = { TabView(tabBarItems, navController) }) {
+                NavHost(navController = navController, startDestination = homeTab.title) {
+                    composable(homeTab.title) {
+                        Text(homeTab.title)
+                    }
+                    composable(alertsTab.title) {
+                        Text(alertsTab.title)
+                    }
+                    composable(settingsTab.title) {
+                        Text(settingsTab.title)
+                    }
+                    composable(moreTab.title) {
+                        MoreView()
                     }
                 }
             }
@@ -83,9 +75,19 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-// ----------------------------------------
-// This is a wrapper view that allows us to easily and cleanly
-// reuse this component in any future project
+@Composable
+fun MoreView() {
+    Column(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Text("Home")
+        Text("Community")
+        Text("Settings")
+        Text("Profile")
+        Text("User")
+    }
+}
+
 @Composable
 fun TabView(tabBarItems: List<TabBarItem>, navController: NavController) {
     var selectedTabIndex by rememberSaveable {
@@ -93,7 +95,6 @@ fun TabView(tabBarItems: List<TabBarItem>, navController: NavController) {
     }
 
     NavigationBar {
-        // looping over each tab to generate the views and navigation for each item
         tabBarItems.forEachIndexed { index, tabBarItem ->
             NavigationBarItem(
                 selected = selectedTabIndex == index,
@@ -110,13 +111,12 @@ fun TabView(tabBarItems: List<TabBarItem>, navController: NavController) {
                         badgeAmount = tabBarItem.badgeAmount
                     )
                 },
-                label = {Text(tabBarItem.title)})
+                label = { Text(tabBarItem.title) }
+            )
         }
     }
 }
 
-// This component helps to clean up the API call from our TabView above,
-// but could just as easily be added inside the TabView without creating this custom component
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TabBarIconView(
@@ -128,16 +128,14 @@ fun TabBarIconView(
 ) {
     BadgedBox(badge = { TabBarBadgeView(badgeAmount) }) {
         Icon(
-            imageVector = if (isSelected) {selectedIcon} else {unselectedIcon},
+            imageVector = if (isSelected) selectedIcon else unselectedIcon,
             contentDescription = title
         )
     }
 }
 
-// This component helps to clean up the API call from our TabBarIconView above,
-// but could just as easily be added inside the TabBarIconView without creating this custom component
-@Composable
 @OptIn(ExperimentalMaterial3Api::class)
+@Composable
 fun TabBarBadgeView(count: Int? = null) {
     if (count != null) {
         Badge {
@@ -145,26 +143,10 @@ fun TabBarBadgeView(count: Int? = null) {
         }
     }
 }
-// end of the reusable components that can be copied over to any new projects
-// ----------------------------------------
 
-// This was added to demonstrate that we are infact changing views when we click a new tab
+@Preview
 @Composable
-fun MoreView() {
-    Column(
-        modifier = Modifier.fillMaxSize()
-    ) {
-        Text("Home")
-        Text("Community")
-        Text("Settings")
-        Text("Profile")
-        Text("User")
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
+fun MoreViewPreview() {
     HarvestHQTheme {
         MoreView()
     }

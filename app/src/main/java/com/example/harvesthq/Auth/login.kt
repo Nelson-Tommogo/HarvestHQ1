@@ -2,7 +2,7 @@
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.Button
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -64,7 +64,7 @@ fun Login(onSignup: (String, String, String, String) -> Unit) {
         )
 
         // Button for signup
-        Button(
+        ElevatedButton(
             onClick = { onSignup(email, password) },
             modifier = Modifier.fillMaxWidth()
         ) {
