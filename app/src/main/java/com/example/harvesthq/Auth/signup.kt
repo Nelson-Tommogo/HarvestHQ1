@@ -75,6 +75,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
+                .clip(MaterialTheme.shapes.extraSmall)
         )
 
         OutlinedTextField(
@@ -94,6 +95,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
+                .clip(MaterialTheme.shapes.extraSmall)
         )
 
         OutlinedTextField(
@@ -113,6 +115,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
+                .clip(MaterialTheme.shapes.medium)
         )
 
         OutlinedTextField(
@@ -128,11 +131,11 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 cursorColor = green2,
                 unfocusedLabelColor = Color.Gray,
-
             ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
+                .clip(MaterialTheme.shapes.extraSmall)
         )
 
 
