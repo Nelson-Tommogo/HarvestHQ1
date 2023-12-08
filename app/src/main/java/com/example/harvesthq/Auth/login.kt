@@ -8,6 +8,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -28,6 +29,9 @@ import com.example.harvesthq.R
 fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+    val white = colorResource(id = R.color.white)
+    val green1 = colorResource(id = R.color.green1)
+    val green2 = colorResource(id = R.color.green2)
 
     Column(
         modifier = Modifier
@@ -63,6 +67,12 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
                 keyboardType = KeyboardType.Text,
                 imeAction = ImeAction.Done
             ),
+            textStyle = LocalTextStyle.current.copy(color = green1),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                cursorColor = green2,
+                unfocusedLabelColor = Color.Gray,
+
+                ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
@@ -77,6 +87,12 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
                 keyboardType = KeyboardType.Password,
                 imeAction = ImeAction.Done
             ),
+            textStyle = LocalTextStyle.current.copy(color = green1),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                cursorColor = green2,
+                unfocusedLabelColor = Color.Gray,
+
+                ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
