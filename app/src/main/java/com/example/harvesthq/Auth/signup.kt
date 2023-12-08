@@ -39,16 +39,16 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             .background(MaterialTheme.colorScheme.background)
             .padding(10.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Top
     ) {
         // Text fields for entering user details
         Image(
-            painter = painterResource(id = R.drawable.harvesthqlogohrs), // Replace with your logo resource ID
-            contentDescription = null, // Provide a description if needed
+            painter = painterResource(id = R.drawable.harvesthqlogohrs),
+            contentDescription = "logo",
             modifier = Modifier
-                .size(320.dp) // Adjust size as needed
+                .size(260.dp)
                 .clip(shape = MaterialTheme.shapes.medium)
-                .padding(bottom = 16.dp),
+                .padding(bottom = 0.dp),
             contentScale = ContentScale.Crop
         )
         Text(
