@@ -66,12 +66,13 @@ fun Login(onSignup: (String, String, String, String) -> Unit) {
         ElevatedButton(
             onClick = { onSignup(email, password) },
             modifier = Modifier.fillMaxWidth(),
-            colors = ButtonDefaults.buttonColors(
-                background = colorResource(id = R.color.green1)
+            colors = ButtonDefaults.elevatedButtonColors(
+                contentColor = colorResource(id = R.color.green1)
             )
         ) {
             Text("Sign In")
         }
+
     }
 }
 

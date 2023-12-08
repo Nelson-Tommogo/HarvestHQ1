@@ -1,15 +1,17 @@
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.ElevatedButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -20,6 +22,7 @@ import androidx.navigation.NavHostController
 import com.example.harvesthq.R
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SignupScreen(navController: NavHostController, onSignup: (String, String, String, String) -> Unit) {
     var firstName by remember { mutableStateOf("") }
@@ -34,11 +37,20 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
-            .padding(16.dp),
+            .padding(10.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         // Text fields for entering user details
+        Image(
+            painter = painterResource(id = R.drawable.harvesthqlogohrs), // Replace with your logo resource ID
+            contentDescription = null, // Provide a description if needed
+            modifier = Modifier
+                .size(320.dp) // Adjust size as needed
+                .clip(shape = MaterialTheme.shapes.medium)
+                .padding(bottom = 16.dp),
+            contentScale = ContentScale.Crop
+        )
         Text(
             text = "Sign Up",
             fontSize = 24.sp, // Adjust the size as needed
@@ -54,6 +66,12 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
                 keyboardType = KeyboardType.Text,
                 imeAction = ImeAction.Done
             ),
+            textStyle = LocalTextStyle.current.copy(color = green1),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                cursorColor = green2,
+                unfocusedLabelColor = Color.Gray,
+
+                ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
@@ -67,6 +85,12 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
                 keyboardType = KeyboardType.Text,
                 imeAction = ImeAction.Done
             ),
+            textStyle = LocalTextStyle.current.copy(color = green1),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                cursorColor = green2,
+                unfocusedLabelColor = Color.Gray,
+
+                ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
@@ -80,6 +104,12 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
                 keyboardType = KeyboardType.Text,
                 imeAction = ImeAction.Done
             ),
+            textStyle = LocalTextStyle.current.copy(color = green1),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                cursorColor = green2,
+                unfocusedLabelColor = Color.Gray,
+
+                ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
@@ -94,10 +124,18 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
                 keyboardType = KeyboardType.Password,
                 imeAction = ImeAction.Done
             ),
+            textStyle = LocalTextStyle.current.copy(color = green1),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                cursorColor = green2,
+                unfocusedLabelColor = Color.Gray,
+
+            ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
         )
+
+
 
         // Button for signup
         ElevatedButton(
@@ -105,7 +143,11 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
                 onSignup(firstName, lastName, email, password)
                 // Navigate to the login screen
                 navController.navigate("login") // "login" is the route to your login screen
-            }, Modifier.fillMaxWidth(),
+            },
+            Modifier.fillMaxWidth(),
+            colors = ButtonDefaults.elevatedButtonColors(
+                contentColor = colorResource(id = R.color.green1)
+            )
         ) {
             Text("Sign Up")
         }
