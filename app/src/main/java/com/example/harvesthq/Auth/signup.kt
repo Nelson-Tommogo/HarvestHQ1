@@ -45,10 +45,10 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
     ) {
         // Text fields for entering user details
         Image(
-            painter = painterResource(id = R.drawable.harvesthqlogohrs),
+            painter = painterResource(id = R.drawable.logonobackground),
             contentDescription = "logo",
             modifier = Modifier
-                .size(260.dp)
+                .size(150.dp)
                 .clip(shape = MaterialTheme.shapes.medium)
                 .padding(bottom = 0.dp),
             contentScale = ContentScale.Crop
@@ -139,7 +139,6 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
                 .padding(bottom = 16.dp)
                 .clip(MaterialTheme.shapes.extraSmall)
         )
-
 
 
         // Button for signup

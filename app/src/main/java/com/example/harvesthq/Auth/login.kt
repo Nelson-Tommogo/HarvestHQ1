@@ -44,10 +44,10 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
     ) {
 
         Image(
-            painter = painterResource(id = R.drawable.harvesthqlogohrs),
+            painter = painterResource(id = R.drawable.logonobackground),
             contentDescription = "logo",
             modifier = Modifier
-                .size(260.dp)
+                .size(200.dp)
                 .clip(shape = MaterialTheme.shapes.medium)
                 .padding(bottom = 0.dp),
             contentScale = ContentScale.Crop

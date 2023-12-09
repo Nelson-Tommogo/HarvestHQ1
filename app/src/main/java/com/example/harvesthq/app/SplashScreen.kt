@@ -58,7 +58,7 @@ fun AnimatedLogo(onAnimationEnd: () -> Unit = {}) {
             contentAlignment = Alignment.Center
         ) {
             Image(
-                painter = painterResource(id = R.drawable.harvesthqlogo),
+                painter = painterResource(id = R.drawable.logonobackground),
                 contentDescription = "logo",
                 modifier = Modifier
                     .width(700.dp)
