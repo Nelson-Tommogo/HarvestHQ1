@@ -78,7 +78,6 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
         )
-
         OutlinedTextField(
             value = password,
             onValueChange = { password = it },
@@ -99,18 +98,21 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
                 .padding(bottom = 16.dp)
         )
         ClickableText(
-            text = AnnotatedString("forgot your password"),
+            text = AnnotatedString("Forgot your password?"),
             onClick = {
-                // Navigate to your login page
+                // Navigate to your reset password page
                 navController.navigate("resetpassword")
             },
-            modifier = Modifier.padding(bottom = 16.dp),
+            modifier = Modifier
+                .padding(bottom = 16.dp)
+                .align(Alignment.End),
             style = TextStyle(
-                fontSize = 16.sp,
+                fontSize = 12.sp,
                 fontWeight = FontWeight.Bold,
-                color =colorResource(id = R.color.green1)
+                color = colorResource(id = R.color.green1),
             )
         )
+
 
         // Button for sign-in
         ElevatedButton(
