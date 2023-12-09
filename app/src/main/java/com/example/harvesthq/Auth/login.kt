@@ -8,7 +8,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -20,8 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.harvesthq.R
-
-
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -54,9 +51,10 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
 
         Text(
             text = "Sign In",
-            fontSize = 24.sp,
+            fontSize = 26.sp,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(bottom = 16.dp)
+            modifier = Modifier.padding(bottom = 16.dp),
+            color = colorResource(id = R.color.green1)
         )
 
         OutlinedTextField(
@@ -70,7 +68,7 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
             textStyle = LocalTextStyle.current.copy(color = green1),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 cursorColor = green2,
-                unfocusedLabelColor = Color.Gray,
+                unfocusedLabelColor = colorResource(id = R.color.green1)
 
                 ),
             modifier = Modifier
@@ -90,7 +88,7 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
             textStyle = LocalTextStyle.current.copy(color = green1),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 cursorColor = green2,
-                unfocusedLabelColor = Color.Gray,
+                unfocusedLabelColor = colorResource(id = R.color.green1)
 
                 ),
             modifier = Modifier
@@ -109,7 +107,12 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
                 contentColor = colorResource(id = R.color.green1)
             )
         ) {
-            Text("Sign In")
+            Text("Sign In",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(bottom = 16.dp),
+                color = colorResource(id = R.color.green1)
+            )
         }
     }
 }

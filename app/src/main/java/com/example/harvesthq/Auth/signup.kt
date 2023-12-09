@@ -8,7 +8,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -53,11 +52,11 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
         )
         Text(
             text = "Sign Up",
-            fontSize = 24.sp, // Adjust the size as needed
-            fontWeight = FontWeight.Bold, // Adjust the weight as needed
-            modifier = Modifier.padding(bottom = 16.dp)
+            fontSize = 26.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 16.dp),
+            color = colorResource(id = R.color.green1)
         )
-
         OutlinedTextField(
             value = firstName,
             onValueChange = { firstName = it },
@@ -69,7 +68,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             textStyle = LocalTextStyle.current.copy(color = green1),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 cursorColor = green2,
-                unfocusedLabelColor = Color.Gray,
+                unfocusedLabelColor = colorResource(id = R.color.green1)
 
                 ),
             modifier = Modifier
@@ -89,7 +88,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             textStyle = LocalTextStyle.current.copy(color = green1),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 cursorColor = green2,
-                unfocusedLabelColor = Color.Gray,
+                unfocusedLabelColor =colorResource(id = R.color.green1)
 
                 ),
             modifier = Modifier
@@ -109,13 +108,13 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             textStyle = LocalTextStyle.current.copy(color = green1),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 cursorColor = green2,
-                unfocusedLabelColor = Color.Gray,
+                unfocusedLabelColor = colorResource(id = R.color.green1)
 
                 ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
-                .clip(MaterialTheme.shapes.medium)
+                .clip(MaterialTheme.shapes.extraSmall)
         )
 
         OutlinedTextField(
@@ -130,7 +129,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             textStyle = LocalTextStyle.current.copy(color = green1),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 cursorColor = green2,
-                unfocusedLabelColor = Color.Gray,
+                unfocusedLabelColor = colorResource(id = R.color.green1)
             ),
             modifier = Modifier
                 .fillMaxWidth()
@@ -152,16 +151,12 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
                 contentColor = colorResource(id = R.color.green1)
             )
         ) {
-            Text("Sign Up")
+            Text("Sign Up",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(bottom = 16.dp),
+                color = colorResource(id = R.color.green1)
+            )
         }
     }
 }
-
-
-//@Preview(showBackground = true)
-//@Composable
-//fun SignupScreenPreview() {
-//    HarvestHQTheme {
-//        SignupScreen { s, s2, s3, s4 ->  }
-//    }
-//}
