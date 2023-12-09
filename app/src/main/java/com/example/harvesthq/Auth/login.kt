@@ -135,7 +135,7 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
         Text(
             text = "Don't have an account?",
             fontSize = 16.sp,
-            fontWeight = FontWeight.Bold,
+            fontWeight = FontWeight.SemiBold,
             modifier = Modifier.padding(top = 16.dp),
             color = colorResource(id = R.color.green1)
         )
@@ -148,7 +148,7 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
             modifier = Modifier.padding(bottom = 16.dp),
             style = TextStyle(
                 fontSize = 16.sp,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.ExtraBold,
                 color =colorResource(id = R.color.green1)
             )
         )

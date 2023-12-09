@@ -164,7 +164,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
         Text(
             text = "Already have an account?",
             fontSize = 16.sp,
-            fontWeight = FontWeight.Bold,
+            fontWeight = FontWeight.SemiBold,
             modifier = Modifier.padding(top = 16.dp),
             color = colorResource(id = R.color.green1)
         )
@@ -177,7 +177,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             modifier = Modifier.padding(bottom = 16.dp),
             style = TextStyle(
                 fontSize = 16.sp,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.ExtraBold,
                 color =colorResource(id = R.color.green1)
             )
         )
