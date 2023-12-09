@@ -10,7 +10,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -26,10 +25,10 @@ import com.example.harvesthq.R
     @Composable
     fun reset(navController: NavHostController, onreset: (String) -> Unit) {
         var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
     val white = colorResource(id = R.color.white)
     val green1 = colorResource(id = R.color.green1)
     val green2 = colorResource(id = R.color.green2)
+    val green11 = colorResource(id = R.color.green11)
 
     Column(
         modifier = Modifier
@@ -52,9 +51,10 @@ import com.example.harvesthq.R
 
         Text(
             text = "Reset Password",
-            fontSize = 24.sp, // Adjust the size as needed
-            fontWeight = FontWeight.Bold, // Adjust the weight as needed
-            modifier = Modifier.padding(bottom = 16.dp)
+            fontSize = 26.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 16.dp),
+            color = colorResource(id = R.color.green1)
         )
         OutlinedTextField(
             value = email,
@@ -67,7 +67,7 @@ import com.example.harvesthq.R
             textStyle = LocalTextStyle.current.copy(color = green1),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 cursorColor = green2,
-                unfocusedLabelColor = Color.Gray,
+                unfocusedLabelColor = colorResource(id = R.color.green11)
 
                 ),
             modifier = Modifier
@@ -80,10 +80,15 @@ import com.example.harvesthq.R
             onClick = { onreRet(email) },
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.elevatedButtonColors(
-                contentColor = colorResource(id = R.color.green1)
+                contentColor = colorResource(id = R.color.green11)
         ))
         {
-            Text("Password Reset Link")
+            Text("Password Reset Link",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(bottom = 16.dp),
+                color = colorResource(id = R.color.green1)
+            )
         }
 
     }

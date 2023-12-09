@@ -2,6 +2,7 @@
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -11,6 +12,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -29,6 +32,7 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
     val white = colorResource(id = R.color.white)
     val green1 = colorResource(id = R.color.green1)
     val green2 = colorResource(id = R.color.green2)
+    val green11 = colorResource(id = R.color.green11)
 
     Column(
         modifier = Modifier
@@ -48,7 +52,6 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
                 .padding(bottom = 0.dp),
             contentScale = ContentScale.Crop
         )
-
         Text(
             text = "Sign In",
             fontSize = 26.sp,
@@ -68,7 +71,7 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
             textStyle = LocalTextStyle.current.copy(color = green1),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 cursorColor = green2,
-                unfocusedLabelColor = colorResource(id = R.color.green1)
+                unfocusedLabelColor = colorResource(id = R.color.green11)
 
                 ),
             modifier = Modifier
@@ -88,12 +91,25 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
             textStyle = LocalTextStyle.current.copy(color = green1),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 cursorColor = green2,
-                unfocusedLabelColor = colorResource(id = R.color.green1)
+                unfocusedLabelColor = colorResource(id = R.color.green11)
 
                 ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
+        )
+        ClickableText(
+            text = AnnotatedString("forgot your password"),
+            onClick = {
+                // Navigate to your login page
+                navController.navigate("resetpassword")
+            },
+            modifier = Modifier.padding(bottom = 16.dp),
+            style = TextStyle(
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
+                color =colorResource(id = R.color.green1)
+            )
         )
 
         // Button for sign-in
@@ -111,9 +127,29 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp),
-                color = colorResource(id = R.color.green1)
+                color = colorResource(id = R.color.green11)
             )
         }
+        Text(
+            text = "Don't have an account?",
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(top = 16.dp),
+            color = colorResource(id = R.color.green1)
+        )
+        ClickableText(
+            text = AnnotatedString("Sign Up"),
+            onClick = {
+                // Navigate to your login page
+                navController.navigate("signup")
+            },
+            modifier = Modifier.padding(bottom = 16.dp),
+            style = TextStyle(
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
+                color =colorResource(id = R.color.green1)
+            )
+        )
     }
 }
 

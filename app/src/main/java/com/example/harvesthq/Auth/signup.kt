@@ -2,6 +2,7 @@
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -11,6 +12,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -158,5 +161,25 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
                 color = colorResource(id = R.color.green1)
             )
         }
+        Text(
+            text = "Already have an account?",
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(top = 16.dp),
+            color = colorResource(id = R.color.green1)
+        )
+        ClickableText(
+            text = AnnotatedString("Sign In"),
+            onClick = {
+                // Navigate to your login page
+                navController.navigate("login")
+            },
+            modifier = Modifier.padding(bottom = 16.dp),
+            style = TextStyle(
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
+                color =colorResource(id = R.color.green1)
+            )
+        )
     }
 }

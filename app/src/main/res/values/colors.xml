@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="green">#F2FFE4</color>
     <color name="green1">#729343</color>
+    <color name="green11">#729343</color>
     <color name="green2">#F2FFE4</color>
     <color name="green3">#F2FFE4</color>
     <color name="green4">#2F8B6D</color>
@@ -16,5 +17,5 @@
     <color name="green7">#FFFFFFFF</color>
     <color name="green8">#FFFFFFFF</color>
     <color name="green9">#FFFFFFFF</color>
-    <color name="green10">#FFFFFFFF</color>
+    <color name="green10">#36C472</color>
 </resources>
