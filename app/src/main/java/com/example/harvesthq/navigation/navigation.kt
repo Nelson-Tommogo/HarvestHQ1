@@ -14,7 +14,7 @@ sealed class Screen(val route: String) {
     object SignUp : Screen("signup")
     object LogIn : Screen("login")
     object reset : Screen("resetpassword")
-
+    object Home : Screen("bottomNavBar")
 
 }
 
@@ -38,5 +38,8 @@ fun SetupNavigation(navController: NavHostController) {
             reset(navController = navController){s->
             }
         }
+//        composable(Screen.Home.route){
+//            bottomNavBar(navController = navController)
+//        }
     }
 }
