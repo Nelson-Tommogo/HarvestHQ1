@@ -24,7 +24,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 
 data class BottomNavigationItem(
     val title: String,
@@ -137,3 +139,18 @@ class bottomnav(private val navController: NavHostController) : ComponentActivit
         // Your content goes here
     }
 }
+
+@Preview
+@Composable
+fun BottomNavPreview() {
+    // You can customize the preview parameters as needed
+    val navController = rememberNavController()
+    BottomNav(navController = navController)
+}
+
+@Composable
+fun BottomNav(navController: NavHostController) {
+    TODO("Not yet implemented")
+}
+
+
