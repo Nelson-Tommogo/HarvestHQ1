@@ -136,7 +136,7 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
         ElevatedButton(
             onClick = {
                 onlogin(email, password)
-                navController.navigate("bottomnav")
+                navController.navigate("BottomNavBar")
             },
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.elevatedButtonColors(

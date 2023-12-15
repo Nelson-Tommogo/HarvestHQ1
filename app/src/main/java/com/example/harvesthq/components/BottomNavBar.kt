@@ -13,14 +13,20 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.harvesthq.R
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BottomNavComposable(navController: NavHostController) {
+    val white = colorResource(id = R.color.white)
+    val green1 = colorResource(id = R.color.green1)
+    val green2 = colorResource(id = R.color.green2)
+    val green11 = colorResource(id = R.color.green11)
     val items = listOf(
         Icons.Default.Home to "Home",
         Icons.Default.Search to "Community",
@@ -34,7 +40,7 @@ fun BottomNavComposable(navController: NavHostController) {
 
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = Color.Red // Set the background color to red
+        color = colorResource(id = R.color.green1) // Set the background color to red
     ) {
         Scaffold(
             bottomBar = {
