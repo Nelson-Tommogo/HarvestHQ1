@@ -7,6 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -14,6 +15,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material3.Card
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -65,7 +68,7 @@ fun AppBar() {
             contentDescription = "Search",
             modifier = Modifier.clickable {
             }
-                .size(36.dp)
+                .size(56.dp)
         )
 
         Icon(
@@ -80,16 +83,29 @@ fun AppBar() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ContainerForAgriculturalProducts() {
-    Column(
+    Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp)
+            .height(200.dp)
+            .background(color = colorResource(id = R.color.green))
+            .padding(16.dp),
+        onClick = {
+
+        }
     ) {
-        Text("HarvestHQ Products")
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text("HarvestHQ Products")
+        }
     }
 }
+
 
 @Composable
 fun ContainerForFrequentlyOrderedProducts() {
