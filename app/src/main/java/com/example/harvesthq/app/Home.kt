@@ -16,6 +16,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Card
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -115,8 +116,8 @@ fun ContainerForAgriculturalProducts() {
                         .padding(8.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    CardWithText("HarvestHQ", R.color.green1)
-                    CardWithText("Farm", R.color.green1)
+                    ButtonWithText("HarvestHQ", R.color.green1)
+                    ButtonWithText("Farm", R.color.green1)
                 }
 
                 // Second row with three smaller cards
@@ -126,35 +127,27 @@ fun ContainerForAgriculturalProducts() {
                         .padding(8.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    CardWithText("Services", R.color.green1)
-                    CardWithText("Product", R.color.green1)
-                    CardWithText("Pricing", R.color.green1)
+                    ButtonWithText("Services", R.color.green1)
+                    ButtonWithText("Product", R.color.green1)
+                    ButtonWithText("Pricing", R.color.green1)
                 }
             }
         }
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CardWithText(text: String, backgroundColor: Int) {
-    Card(
+fun ButtonWithText(text: String, backgroundColor: Int) {
+    ElevatedButton(
+        onClick = {},
         modifier = Modifier
             .background(color = colorResource(id = backgroundColor))
-            .padding(8.dp),
-        onClick = {
-
-        }
+            .padding(8.dp)
     ) {
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(text)
-        }
+        Text(text)
     }
 }
+
 
 
 
