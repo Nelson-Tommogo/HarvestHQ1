@@ -29,13 +29,18 @@ import com.example.harvesthq.R
 fun HomePage() {
     Scaffold(
         topBar = { AppBar() },
-        content = { Content() }
+        content = {
+            Column {
+                ContainerForAgriculturalProducts()
+                ContainerForFrequentlyOrderedProducts()
+            }
+        }
     )
 }
 
 @Composable
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 fun AppBar() {
-    // Container for your app bar with logo, search, and settings
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -45,43 +50,29 @@ fun AppBar() {
     ) {
 
         Image(
-            painter = painterResource(id = R.drawable.harvesthqlogohrs), // Placeholder logo
+            painter = painterResource(id = R.drawable.harvesthqlogohrs),
             contentDescription = "Harvest Logo",
             modifier = Modifier.size(48.dp)
         )
-
 
         Icon(
             imageVector = Icons.Default.Search,
             contentDescription = "Search",
             modifier = Modifier.clickable {
-
             }
         )
-
 
         Icon(
             imageVector = Icons.Default.Settings,
             contentDescription = "Settings",
             modifier = Modifier.clickable {
-                // Handle settings click
             }
         )
     }
 }
 
 @Composable
-fun Content() {
-
-    ContainerForAgriculturalProducts()
-
-
-    ContainerForFrequentlyOrderedProducts()
-}
-
-@Composable
 fun ContainerForAgriculturalProducts() {
-
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -93,14 +84,12 @@ fun ContainerForAgriculturalProducts() {
 
 @Composable
 fun ContainerForFrequentlyOrderedProducts() {
-
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
     ) {
         Text("Frequently Ordered Products")
-
     }
 }
 
