@@ -151,14 +151,54 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
             )
         }
         Text(
-            text = "Don't have an account?",
+            text = "Or Sign In using",
             fontSize = 16.sp,
             fontWeight = FontWeight.SemiBold,
             modifier = Modifier.padding(top = 16.dp),
             color = colorResource(id = R.color.green1)
         )
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+
+            Image(
+                painter = painterResource(id = R.drawable.google),
+                contentDescription = "Google",
+                modifier = Modifier
+                    .size(40.dp)
+                    .clickable {
+
+                    }
+            )
+
+
+            Image(
+                painter = painterResource(id = R.drawable.facebook),
+                contentDescription = "FaceBook",
+                modifier = Modifier
+                    .size(40.dp)
+                    .clickable {
+
+                    }
+            )
+
+
+            Image(
+                painter = painterResource(id = R.drawable.twitter),
+                contentDescription = "Twitter",
+                modifier = Modifier
+                    .size(40.dp)
+                    .clickable {
+
+                    }
+            )
+        }
         ClickableText(
-            text = AnnotatedString("Sign Up"),
+            text = AnnotatedString("Don't Have Account? Sign Up"),
             onClick = {
                 // Navigate to your login page
                 navController.navigate("signup")
@@ -178,7 +218,6 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
 @Preview
 @Composable
 fun LoginPreview() {
-    // You can customize the preview parameters as needed
     val navController = rememberNavController()
     Login(navController = navController, onlogin = { _, _ -> })
 }

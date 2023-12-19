@@ -181,7 +181,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             )
         }
         Text(
-            text = "Or Sign in With",
+            text = "Or Sign up With",
             fontSize = 16.sp,
             fontWeight = FontWeight.SemiBold,
             modifier = Modifier.padding(top = 16.dp),
