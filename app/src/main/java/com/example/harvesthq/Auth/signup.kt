@@ -230,7 +230,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
 
 
         ClickableText(
-            text = AnnotatedString("Sign In"),
+            text = AnnotatedString("Have an Account?Sign In"),
             onClick = {
                 // Navigate to your login page
                 navController.navigate("login")
