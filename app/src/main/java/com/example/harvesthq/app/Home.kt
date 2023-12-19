@@ -113,6 +113,7 @@ fun ContainerForAgriculturalProducts() {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
+                        .height(100.dp)
                         .padding(8.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
@@ -124,7 +125,7 @@ fun ContainerForAgriculturalProducts() {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(45.dp)
+                        .height(175.dp)
                         .padding(8.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
