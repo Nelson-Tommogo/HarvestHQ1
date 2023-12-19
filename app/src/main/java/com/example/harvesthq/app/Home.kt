@@ -55,7 +55,7 @@ fun AppBar() {
     ) {
 
         Image(
-            painter = painterResource(id = R.drawable.logonobackground),
+            painter = painterResource(id = R.drawable.harvesthqlogohrs),
             contentDescription = "Harvest Logo",
             modifier = Modifier.size(100.dp)
         )
