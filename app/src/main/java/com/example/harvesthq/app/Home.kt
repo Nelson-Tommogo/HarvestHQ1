@@ -51,7 +51,7 @@ fun AppBar() {
         modifier = Modifier
             .fillMaxWidth()
             .height(70.dp)
-            .background(color = colorResource(id = R.color.green1))
+            .background(color = colorResource(id = R.color.homecards))
             .padding(16.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
@@ -124,6 +124,7 @@ fun ContainerForAgriculturalProducts() {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
+                        .height(45.dp)
                         .padding(8.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
