@@ -114,7 +114,7 @@ fun ContainerForAgriculturalProducts() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(100.dp)
-                        .padding(8.dp),
+                        .padding(2.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     ButtonWithText("HarvestHQ", R.color.homecards)
@@ -126,7 +126,7 @@ fun ContainerForAgriculturalProducts() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(175.dp)
-                        .padding(8.dp),
+                        .padding(0.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     ButtonWithText("Services", R.color.homecards)
