@@ -1,8 +1,10 @@
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -179,12 +181,54 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             )
         }
         Text(
-            text = "Already have an account?",
+            text = "Or Sign in With",
             fontSize = 16.sp,
             fontWeight = FontWeight.SemiBold,
             modifier = Modifier.padding(top = 16.dp),
             color = colorResource(id = R.color.green1)
         )
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+
+            Image(
+                painter = painterResource(id = R.drawable.google),
+                contentDescription = "Google",
+                modifier = Modifier
+                    .size(40.dp)
+                    .clickable {
+
+                    }
+            )
+
+
+            Image(
+                painter = painterResource(id = R.drawable.facebook),
+                contentDescription = "FaceBook",
+                modifier = Modifier
+                    .size(40.dp)
+                    .clickable {
+
+                    }
+            )
+
+
+            Image(
+                painter = painterResource(id = R.drawable.twitter),
+                contentDescription = "Twitter",
+                modifier = Modifier
+                    .size(40.dp)
+                    .clickable {
+
+                    }
+            )
+        }
+
+
         ClickableText(
             text = AnnotatedString("Sign In"),
             onClick = {
@@ -204,7 +248,6 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
 @Preview
 @Composable
 fun signUpPreview() {
-    // You can customize the preview parameters as needed
     val navController = rememberNavController()
     SignupScreen(navController = navController, onSignup = {s, s2, s3, s4 ->  } )
 }
