@@ -55,7 +55,7 @@ fun AppBar() {
     ) {
 
         Image(
-            painter = painterResource(id = R.drawable.harvesthqlogohrs),
+            painter = painterResource(id = R.drawable.harvesthqlogo),
             contentDescription = "Harvest Logo",
             modifier = Modifier.size(100.dp)
         )
@@ -65,13 +65,17 @@ fun AppBar() {
             contentDescription = "Search",
             modifier = Modifier.clickable {
             }
+                .size(36.dp)
         )
 
         Icon(
             imageVector = Icons.Default.Settings,
             contentDescription = "Settings",
-            modifier = Modifier.clickable {
-            }
+            modifier = Modifier
+                .clickable {
+
+                }
+                .size(36.dp)
         )
     }
 }
