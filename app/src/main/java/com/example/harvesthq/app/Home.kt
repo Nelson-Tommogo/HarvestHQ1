@@ -47,7 +47,7 @@ fun AppBar() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(150.dp)
+            .height(70.dp)
             .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -55,7 +55,7 @@ fun AppBar() {
     ) {
 
         Image(
-            painter = painterResource(id = R.drawable.harvesthqlogohrs),
+            painter = painterResource(id = R.drawable.logonobackground),
             contentDescription = "Harvest Logo",
             modifier = Modifier.size(100.dp)
         )
