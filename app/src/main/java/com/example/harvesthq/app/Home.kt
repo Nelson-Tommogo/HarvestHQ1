@@ -90,7 +90,7 @@ fun ContainerForAgriculturalProducts() {
         modifier = Modifier
             .fillMaxWidth()
             .height(400.dp) // Increase the height to accommodate nested cards
-            .background(color = colorResource(id = R.color.homecards))
+            .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
         onClick = {
 
@@ -116,8 +116,8 @@ fun ContainerForAgriculturalProducts() {
                         .padding(8.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    ButtonWithText("HarvestHQ", R.color.green1)
-                    ButtonWithText("Farm", R.color.green1)
+                    ButtonWithText("HarvestHQ", R.color.homecards)
+                    ButtonWithText("Farm", R.color.homecards)
                 }
 
                 // Second row with three smaller cards
@@ -127,9 +127,9 @@ fun ContainerForAgriculturalProducts() {
                         .padding(8.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    ButtonWithText("Services", R.color.green1)
-                    ButtonWithText("Product", R.color.green1)
-                    ButtonWithText("Pricing", R.color.green1)
+                    ButtonWithText("Services", R.color.homecards)
+                    ButtonWithText("Product", R.color.homecards)
+                    ButtonWithText("Pricing", R.color.homecards)
                 }
             }
         }
