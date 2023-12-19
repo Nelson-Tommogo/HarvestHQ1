@@ -88,8 +88,8 @@ fun ContainerForAgriculturalProducts() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(200.dp)
-            .background(color = colorResource(id = R.color.green))
+            .height(400.dp) // Increase the height to accommodate nested cards
+            .background(color = colorResource(id = R.color.homecards))
             .padding(16.dp),
         onClick = {
 
@@ -101,9 +101,61 @@ fun ContainerForAgriculturalProducts() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text("HarvestHQ Products")
+
+            // Nested Cards
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ) {
+                // First row with two big cards
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    CardWithText("HarvestHQ", R.color.green1)
+                    CardWithText("Farm", R.color.green1)
+                }
+
+                // Second row with three smaller cards
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    CardWithText("Services", R.color.green1)
+                    CardWithText("Product", R.color.green1)
+                    CardWithText("Pricing", R.color.green1)
+                }
+            }
         }
     }
 }
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun CardWithText(text: String, backgroundColor: Int) {
+    Card(
+        modifier = Modifier
+            .background(color = colorResource(id = backgroundColor))
+            .padding(8.dp),
+        onClick = {
+
+        }
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(text)
+        }
+    }
+}
+
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -112,10 +164,10 @@ fun ContainerForFrequentlyOrderedProducts() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .background(color = colorResource(id = R.color.green))
+            .background(color = colorResource(id = R.color.homecards))
             .padding(16.dp),
         onClick = {
-            // Handle click
+
         }
     ) {
         Column(
