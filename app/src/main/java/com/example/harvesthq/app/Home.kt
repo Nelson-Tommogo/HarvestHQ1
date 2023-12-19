@@ -107,16 +107,28 @@ fun ContainerForAgriculturalProducts() {
 }
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ContainerForFrequentlyOrderedProducts() {
-    Column(
+    Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp)
+            .background(color = colorResource(id = R.color.green))
+            .padding(16.dp),
+        onClick = {
+            // Handle click
+        }
     ) {
-        Text("Frequently Ordered Products")
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text("Frequently Ordered Products")
+        }
     }
 }
+
 
 @Preview
 @Composable
