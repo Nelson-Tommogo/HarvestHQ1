@@ -31,7 +31,7 @@ import com.example.harvesthq.R
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
+fun Logintrial(navController: NavHostController, onlogin: (String, String) -> Unit) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     val white = colorResource(id = R.color.white)
@@ -225,7 +225,7 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
 
 @Preview
 @Composable
-fun LoginPreview() {
+fun LogintrialPreview() {
     val navController = rememberNavController()
     Logintrial(navController = navController, onlogin = { _, _ -> })
 }
