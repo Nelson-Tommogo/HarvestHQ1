@@ -3,12 +3,14 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.ButtonDefaults
@@ -194,39 +196,60 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
                 .padding(top = 16.dp),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
+            val imageSize = 40.dp
 
-            Image(
-                painter = painterResource(id = R.drawable.google),
-                contentDescription = "Google",
+            // Google
+            Box(
                 modifier = Modifier
-                    .size(40.dp)
+                    .size(imageSize)
+                    .background(color = colorResource(id = R.color.white))
+                    .clip(CircleShape)
                     .clickable {
-
+                        // Handle Google click
                     }
-            )
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.google),
+                    contentDescription = "Google",
+                    modifier = Modifier.size(imageSize)
+                )
+            }
 
-
-            Image(
-                painter = painterResource(id = R.drawable.facebook),
-                contentDescription = "FaceBook",
+            // Facebook
+            Box(
                 modifier = Modifier
-                    .size(40.dp)
+                    .size(imageSize)
+                    .background(color = colorResource(id = R.color.white))
+                    .clip(CircleShape)
                     .clickable {
-
+                        // Handle Facebook click
                     }
-            )
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.facebook),
+                    contentDescription = "Facebook",
+                    modifier = Modifier.size(imageSize)
+                )
+            }
 
-
-            Image(
-                painter = painterResource(id = R.drawable.twitter),
-                contentDescription = "Twitter",
+            // Twitter
+            Box(
                 modifier = Modifier
-                    .size(40.dp)
+                    .size(imageSize)
+                    .background(color = colorResource(id = R.color.white))
+                    .clip(CircleShape)
                     .clickable {
-
+                        // Handle Twitter click
                     }
-            )
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.twitter),
+                    contentDescription = "Twitter",
+                    modifier = Modifier.size(imageSize)
+                )
+            }
         }
+
 
 
         ClickableText(
