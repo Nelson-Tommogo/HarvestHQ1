@@ -196,13 +196,13 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
                 .padding(top = 16.dp),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            val imageSize = 40.dp
+            val imageSize = 30.dp
 
             // Google
             Box(
                 modifier = Modifier
                     .size(imageSize)
-                    .background(color = colorResource(id = R.color.white))
+                    .background(color = colorResource(id = R.color.green1))
                     .clip(CircleShape)
                     .clickable {
                         // Handle Google click
@@ -219,7 +219,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             Box(
                 modifier = Modifier
                     .size(imageSize)
-                    .background(color = colorResource(id = R.color.white))
+                    .background(color = colorResource(id = R.color.green1))
                     .clip(CircleShape)
                     .clickable {
                         // Handle Facebook click
@@ -236,7 +236,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             Box(
                 modifier = Modifier
                     .size(imageSize)
-                    .background(color = colorResource(id = R.color.white))
+                    .background(color = colorResource(id = R.color.green1))
                     .clip(CircleShape)
                     .clickable {
                         // Handle Twitter click
