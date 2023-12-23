@@ -103,7 +103,7 @@ fun AppBarone() {
             modifier = Modifier
                 .clickable {
                 }
-                .size(36.dp)
+                .size(20.dp)
         )
 
 
@@ -114,7 +114,7 @@ fun AppBarone() {
                 .clickable {
 
                 }
-                .size(36.dp)
+                .size(26.dp)
         )
 
         Image(
@@ -124,7 +124,7 @@ fun AppBarone() {
                 .clickable {
 
                 }
-                .size(36.dp)
+                .size(26.dp)
         )
 
     }

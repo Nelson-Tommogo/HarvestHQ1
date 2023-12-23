@@ -12,13 +12,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Card
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -37,6 +33,7 @@ fun HomePage() {
         modifier = Modifier.fillMaxSize(),
         content = {
             AppBar()
+            Adverts()
             Adds()
             HHQP()
             FOP()
@@ -74,19 +71,27 @@ fun AppBar() {
             contentDescription = "Harvest Logo",
             modifier = Modifier.size(100.dp)
         )
-
-        Icon(
-            imageVector = Icons.Default.Search,
+        Image(
+            painter = painterResource(id = R.drawable.search),
             contentDescription = "Search",
             modifier = Modifier
                 .clickable {
                 }
-                .size(56.dp)
+                .size(36.dp)
         )
 
-        Icon(
-            imageVector = Icons.Default.Settings,
-            contentDescription = "Settings",
+        Image(
+            painter = painterResource(id = R.drawable.scanqr),
+            contentDescription = "scan",
+            modifier = Modifier
+                .clickable {
+
+                }
+                .size(36.dp)
+        )
+        Image(
+            painter = painterResource(id = R.drawable.set),
+            contentDescription = "App setting",
             modifier = Modifier
                 .clickable {
 
@@ -102,7 +107,7 @@ fun HHQP() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(300.dp)
+            .height(250.dp)
             .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
         onClick = {
@@ -192,6 +197,40 @@ fun FOP() {
                     ButtonWithText("Weed Control", R.color.homecards)
                     ButtonWithText("Pest Control", R.color.homecards)
                 }
+            }
+        }
+    }
+}
+
+
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun Adverts() {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(150.dp)
+            .background(color = colorResource(id = R.color.green1))
+            .padding(16.dp),
+        onClick = {
+
+        }
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text("Adverts")
+
+            // Nested Cards
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ) {
+
             }
         }
     }
