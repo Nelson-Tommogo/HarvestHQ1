@@ -38,12 +38,25 @@ fun HomePage() {
         modifier = Modifier.fillMaxSize(),
         content = {
             AppBar()
-            ContainerForAgriculturalProducts()
-            ContainerForFrequentlyOrderedProducts()
+            Adds()
+            HHQP()
+            FOP()
+            ADDS()
         }
     )
 }
 
+@Composable
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+fun Adds(){
+
+}
+
+@Composable
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+fun ADDS(){
+
+}
 
 @Composable
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -51,7 +64,7 @@ fun AppBar() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(70.dp)
+            .height(100.dp)
             .background(color = colorResource(id = R.color.homecards))
             .padding(16.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -67,8 +80,9 @@ fun AppBar() {
         Icon(
             imageVector = Icons.Default.Search,
             contentDescription = "Search",
-            modifier = Modifier.clickable {
-            }
+            modifier = Modifier
+                .clickable {
+                }
                 .size(56.dp)
         )
 
@@ -86,7 +100,7 @@ fun AppBar() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ContainerForAgriculturalProducts() {
+fun HHQP() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -155,7 +169,7 @@ fun ButtonWithText(text: String, backgroundColor: Int) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ContainerForFrequentlyOrderedProducts() {
+fun FOP() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
