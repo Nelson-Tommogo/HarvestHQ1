@@ -48,7 +48,6 @@ fun HomePage() {
 @Composable
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 fun Adds(){
-
 }
 
 @Composable
