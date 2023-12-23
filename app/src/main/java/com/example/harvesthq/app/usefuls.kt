@@ -1,86 +1,117 @@
-package com.example.harvesthq.app
-
-//                Row(
-//                    modifier = Modifier
-//                        .fillMaxWidth()
-//                        .height(100.dp)
-//                        .padding(16.dp),
-//                    horizontalArrangement = Arrangement.SpaceBetween
-//                ) {
-//                    ButtonWithText("Products", R.color.homecards)
-//                    ButtonWithText("Farm", R.color.homecards)
-//                }
-
-
-//                Row(
-//                    modifier = Modifier
-//                        .fillMaxWidth()
-//                        .height(100.dp)
-//                        .padding(16.dp),
-//                    horizontalArrangement = Arrangement.SpaceBetween
-//                ) {
-//                    ButtonWithText("Services", R.color.homecards)
-//                    ButtonWithText("Pricing", R.color.homecards)
-//                }
-
-
-
 
 import android.annotation.SuppressLint
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Card
-import androidx.compose.material3.ElevatedButton
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.compose.rememberNavController
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.*
 import com.example.harvesthq.R
 
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            val navController = rememberNavController()
+            NavHost(
+                navController = navController,
+                startDestination = "home"
+            ) {
+                addHome(navController)
+                addSearch(navController)
+                addScan(navController)
+                addSettings(navController)
+                addHHQPDetails(navController)
+                addFOPDetails(navController)
+            }
+        }
+    }
+}
+
+fun NavGraphBuilder.addHome(navController: NavController) {
+    composable("home") {
+        HomePageone(navController)
+    }
+}
+
+fun NavGraphBuilder.addSearch(navController: NavController) {
+    composable("search") {
+        // Add code for the search destination if needed
+    }
+}
+
+fun NavGraphBuilder.addScan(navController: NavController) {
+    composable("scan") {
+        // Add code for the scan destination if needed
+    }
+}
+
+fun NavGraphBuilder.addSettings(navController: NavController) {
+    composable("settings") {
+        // Add code for the settings destination if needed
+    }
+}
+
+fun NavGraphBuilder.addHHQPDetails(navController: NavController) {
+    composable("hhqp_details") {
+        // Add code for the HHQP details destination if needed
+    }
+}
+
+fun NavGraphBuilder.addFOPDetails(navController: NavController) {
+    composable("fop_details") {
+        // Add code for the FOP details destination if needed
+    }
+}
+
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomePageone() {
-    Column(
-        modifier = Modifier.fillMaxSize(),
+fun HomePageone(navController: NavController) {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("Harvest HQ") },
+                navigationIcon = {
+                    Image(
+                        painter = painterResource(id = R.drawable.harvesthqlogo),
+                        contentDescription = "Harvest Logo",
+                        modifier = Modifier.clickable {
+                            navController.navigate("home")
+                        }.padding(8.dp)
+                    )
+                }
+            )
+        },
         content = {
-            AppBarone()
-            Addsone()
-            HHQPone()
-            FOPone()
-            ADDSone()
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                content = {
+                    Advertsone()
+                    Addsone()
+                    HHQPone(navController)
+                    FOPone(navController)
+                    ADDSone()
+                }
+            )
         }
     )
 }
 
 @Composable
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-fun Addsone(){
-}
-
-@Composable
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-fun ADDSone(){
-
-}
-
-@Composable
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-fun AppBarone() {
+fun AppBarone(navController: NavController) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -90,57 +121,51 @@ fun AppBarone() {
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
-
         Image(
             painter = painterResource(id = R.drawable.harvesthqlogo),
             contentDescription = "Harvest Logo",
-            modifier = Modifier.size(100.dp)
+            modifier = Modifier.clickable {
+                navController.navigate("home")
+            }.size(26.dp)
         )
-
         Image(
             painter = painterResource(id = R.drawable.search),
             contentDescription = "Search",
             modifier = Modifier
                 .clickable {
                 }
-                .size(20.dp)
+                .size(26.dp)
         )
-
-
         Image(
             painter = painterResource(id = R.drawable.scanqr),
-            contentDescription = "scan",
+            contentDescription = "QRCODE",
             modifier = Modifier
                 .clickable {
-
                 }
                 .size(26.dp)
         )
-
         Image(
             painter = painterResource(id = R.drawable.set),
-            contentDescription = "App setting",
+            contentDescription = "setting",
             modifier = Modifier
                 .clickable {
-
                 }
                 .size(26.dp)
         )
-
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HHQPone() {
+fun HHQPone(navController: NavController) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(300.dp)
+            .height(250.dp)
             .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
         onClick = {
-
+            navController.navigate("hhqp_details")
         }
     ) {
         Column(
@@ -149,37 +174,13 @@ fun HHQPone() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text("HarvestHQ Section")
-
-            // Nested Cards
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp)
-            ) {
-
-            }
         }
     }
 }
 
-@Composable
-fun ButtonWithTextome(text: String, backgroundColor: Int) {
-    ElevatedButton(
-        onClick = {},
-        modifier = Modifier
-            .background(color = colorResource(id = backgroundColor))
-            .padding(16.dp)
-    ) {
-        Text(text)
-    }
-}
-
-
-
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FOPone() {
+fun FOPone(navController: NavController) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -187,7 +188,7 @@ fun FOPone() {
             .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
         onClick = {
-
+            navController.navigate("fop_details")
         }
     ) {
         Column(
@@ -196,45 +197,46 @@ fun FOPone() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text("Categories")
-
-            // Nested Cards
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp)
-            ) {
-                // First row with two big cards
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(100.dp)
-                        .padding(16.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    ButtonWithText("Vegetable", R.color.homecards)
-                    ButtonWithText("Fruits", R.color.homecards)
-                }
-
-                // Second row with three smaller cards
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(100.dp)
-                        .padding(16.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    ButtonWithText("Weed Control", R.color.homecards)
-                    ButtonWithText("Pest Control", R.color.homecards)
-                }
-            }
         }
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun Advertsone() {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(150.dp)
+            .background(color = colorResource(id = R.color.green1))
+            .padding(16.dp),
+        onClick = {
+            // Handle card click if needed
+        }
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text("Adverts")
+        }
+    }
+}
+
+@Composable
+fun Addsone() {
+    // Your Adds composable content here
+}
+
+@Composable
+fun ADDSone() {
+    // Your ADDS composable content here
+}
 
 @Preview
 @Composable
-fun HomePageonePreview() {
+fun HomePagePreview() {
     val navController = rememberNavController()
-    HomePageone()
+    HomePageone(navController)
 }
