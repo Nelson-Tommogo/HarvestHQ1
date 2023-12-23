@@ -171,7 +171,7 @@ fun ContainerForFrequentlyOrderedProducts() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Frequently Ordered")
+            Text("Categories")
 
             // Nested Cards
             Column(
@@ -187,8 +187,8 @@ fun ContainerForFrequentlyOrderedProducts() {
                         .padding(16.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    ButtonWithText("Products", R.color.homecards)
-                    ButtonWithText("Farm", R.color.homecards)
+                    ButtonWithText("Vegetable", R.color.homecards)
+                    ButtonWithText("Fruits", R.color.homecards)
                 }
 
                 // Second row with three smaller cards
@@ -199,8 +199,8 @@ fun ContainerForFrequentlyOrderedProducts() {
                         .padding(16.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    ButtonWithText("Services", R.color.homecards)
-                    ButtonWithText("Pricing", R.color.homecards)
+                    ButtonWithText("Weed Control", R.color.homecards)
+                    ButtonWithText("Pest Control", R.color.homecards)
                 }
             }
         }
