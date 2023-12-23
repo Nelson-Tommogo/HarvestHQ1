@@ -89,7 +89,7 @@ fun AppBar() {
 fun ContainerForAgriculturalProducts() {
     Card(
         modifier = Modifier
-            .width(500.dp)
+            .fillMaxWidth()
             .height(350.dp)
             .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
@@ -102,7 +102,7 @@ fun ContainerForAgriculturalProducts() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("HarvestHQ Products")
+            Text("HarvestHQ Section")
 
             // Nested Cards
             Column(
@@ -115,10 +115,10 @@ fun ContainerForAgriculturalProducts() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(100.dp)
-                        .padding(2.dp),
+                        .padding(16.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    ButtonWithText("HarvestHQ", R.color.homecards)
+                    ButtonWithText("Products", R.color.homecards)
                     ButtonWithText("Farm", R.color.homecards)
                 }
 
@@ -130,7 +130,7 @@ fun ContainerForAgriculturalProducts() {
                         .padding(16.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    ButtonWithText("Services/Products", R.color.homecards)
+                    ButtonWithText("Services", R.color.homecards)
                     ButtonWithText("Pricing", R.color.homecards)
                 }
             }
@@ -144,7 +144,7 @@ fun ButtonWithText(text: String, backgroundColor: Int) {
         onClick = {},
         modifier = Modifier
             .background(color = colorResource(id = backgroundColor))
-            .padding(8.dp)
+            .padding(16.dp)
     ) {
         Text(text)
     }
@@ -159,7 +159,8 @@ fun ContainerForFrequentlyOrderedProducts() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .background(color = colorResource(id = R.color.homecards))
+            .height(350.dp)
+            .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
         onClick = {
 
@@ -170,7 +171,38 @@ fun ContainerForFrequentlyOrderedProducts() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Frequently Ordered Products")
+            Text("Frequently Ordered")
+
+            // Nested Cards
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ) {
+                // First row with two big cards
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(100.dp)
+                        .padding(16.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    ButtonWithText("Products", R.color.homecards)
+                    ButtonWithText("Farm", R.color.homecards)
+                }
+
+                // Second row with three smaller cards
+                Row(
+                    modifier = Modifier
+                        .width(350.dp)
+                        .height(175.dp)
+                        .padding(16.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    ButtonWithText("Services", R.color.homecards)
+                    ButtonWithText("Pricing", R.color.homecards)
+                }
+            }
         }
     }
 }
