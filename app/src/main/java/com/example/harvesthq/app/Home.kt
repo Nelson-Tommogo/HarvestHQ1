@@ -127,11 +127,10 @@ fun ContainerForAgriculturalProducts() {
                     modifier = Modifier
                         .width(350.dp)
                         .height(175.dp)
-                        .padding(0.dp),
+                        .padding(16.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    ButtonWithText("Services", R.color.homecards)
-                    ButtonWithText("Product", R.color.homecards)
+                    ButtonWithText("Services/Products", R.color.homecards)
                     ButtonWithText("Pricing", R.color.homecards)
                 }
             }
