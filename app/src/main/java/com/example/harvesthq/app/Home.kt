@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
@@ -88,8 +89,8 @@ fun AppBar() {
 fun ContainerForAgriculturalProducts() {
     Card(
         modifier = Modifier
-            .fillMaxWidth()
-            .height(400.dp) // Increase the height to accommodate nested cards
+            .width(500.dp)
+            .height(350.dp)
             .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
         onClick = {
@@ -124,7 +125,7 @@ fun ContainerForAgriculturalProducts() {
                 // Second row with three smaller cards
                 Row(
                     modifier = Modifier
-                        .fillMaxWidth()
+                        .width(350.dp)
                         .height(175.dp)
                         .padding(0.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
