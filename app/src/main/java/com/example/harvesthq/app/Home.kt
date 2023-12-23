@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
@@ -173,7 +172,7 @@ fun FOP() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(350.dp)
+            .height(300.dp)
             .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
         onClick = {
@@ -208,8 +207,8 @@ fun FOP() {
                 // Second row with three smaller cards
                 Row(
                     modifier = Modifier
-                        .width(350.dp)
-                        .height(175.dp)
+                        .fillMaxWidth()
+                        .height(100.dp)
                         .padding(16.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
