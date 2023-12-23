@@ -64,7 +64,7 @@ fun AppBar() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(100.dp)
+            .height(70.dp)
             .background(color = colorResource(id = R.color.homecards))
             .padding(16.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -104,7 +104,7 @@ fun HHQP() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(350.dp)
+            .height(300.dp)
             .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
         onClick = {
@@ -139,8 +139,8 @@ fun HHQP() {
                 // Second row with three smaller cards
                 Row(
                     modifier = Modifier
-                        .width(350.dp)
-                        .height(175.dp)
+                        .fillMaxWidth()
+                        .height(100.dp)
                         .padding(16.dp),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
