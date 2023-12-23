@@ -1,5 +1,31 @@
 package com.example.harvesthq.app
 
+//                Row(
+//                    modifier = Modifier
+//                        .fillMaxWidth()
+//                        .height(100.dp)
+//                        .padding(16.dp),
+//                    horizontalArrangement = Arrangement.SpaceBetween
+//                ) {
+//                    ButtonWithText("Products", R.color.homecards)
+//                    ButtonWithText("Farm", R.color.homecards)
+//                }
+
+
+//                Row(
+//                    modifier = Modifier
+//                        .fillMaxWidth()
+//                        .height(100.dp)
+//                        .padding(16.dp),
+//                    horizontalArrangement = Arrangement.SpaceBetween
+//                ) {
+//                    ButtonWithText("Services", R.color.homecards)
+//                    ButtonWithText("Pricing", R.color.homecards)
+//                }
+
+
+
+
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -32,33 +58,33 @@ import com.example.harvesthq.R
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun HomePage() {
+fun HomePageone() {
     Column(
         modifier = Modifier.fillMaxSize(),
         content = {
-            AppBar()
-            Adds()
-            HHQP()
-            FOP()
-            ADDS()
+            AppBarone()
+            Addsone()
+            HHQPone()
+            FOPone()
+            ADDSone()
         }
     )
 }
 
 @Composable
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-fun Adds(){
+fun Addsone(){
 }
 
 @Composable
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-fun ADDS(){
+fun ADDSone(){
 
 }
 
 @Composable
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-fun AppBar() {
+fun AppBarone() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -98,7 +124,7 @@ fun AppBar() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HHQP() {
+fun HHQPone() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -129,7 +155,7 @@ fun HHQP() {
 }
 
 @Composable
-fun ButtonWithText(text: String, backgroundColor: Int) {
+fun ButtonWithTextome(text: String, backgroundColor: Int) {
     ElevatedButton(
         onClick = {},
         modifier = Modifier
@@ -145,7 +171,7 @@ fun ButtonWithText(text: String, backgroundColor: Int) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FOP() {
+fun FOPone() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -200,7 +226,7 @@ fun FOP() {
 
 @Preview
 @Composable
-fun HomePagePreview() {
+fun HomePageonePreview() {
     val navController = rememberNavController()
-    HomePage()
+    HomePageone()
 }

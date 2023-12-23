@@ -34,8 +34,8 @@ import com.example.harvesthq.R
 fun Home() {
     Column {
         StuckAppBar()
-        ContainerForAgriculturalProducts()
-        ContainerForFrequentlyOrderedProducts()
+        products()
+        fproducts()
     }
 }
 
@@ -78,7 +78,7 @@ fun StuckAppBar() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AgriculturalProducts() {
+fun products() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -101,7 +101,7 @@ fun AgriculturalProducts() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FrequentlyOrderedProducts() {
+fun fproducts() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
