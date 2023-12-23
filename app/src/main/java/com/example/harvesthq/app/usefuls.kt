@@ -38,13 +38,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Card
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -101,24 +97,36 @@ fun AppBarone() {
             modifier = Modifier.size(100.dp)
         )
 
-        Icon(
-            imageVector = Icons.Default.Search,
+        Image(
+            painter = painterResource(id = R.drawable.search),
             contentDescription = "Search",
             modifier = Modifier
                 .clickable {
                 }
-                .size(56.dp)
+                .size(36.dp)
         )
 
-        Icon(
-            imageVector = Icons.Default.Settings,
-            contentDescription = "Settings",
+
+        Image(
+            painter = painterResource(id = R.drawable.scanqr),
+            contentDescription = "scan",
             modifier = Modifier
                 .clickable {
 
                 }
                 .size(36.dp)
         )
+
+        Image(
+            painter = painterResource(id = R.drawable.set),
+            contentDescription = "App setting",
+            modifier = Modifier
+                .clickable {
+
+                }
+                .size(36.dp)
+        )
+
     }
 }
 
