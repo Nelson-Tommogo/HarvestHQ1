@@ -50,7 +50,6 @@ fun Adds(){
 @Composable
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 fun ADDS(){
-
 }
 
 @Composable
@@ -77,7 +76,7 @@ fun AppBar() {
             modifier = Modifier
                 .clickable {
                 }
-                .size(36.dp)
+                .size(26.dp)
         )
 
         Image(
@@ -87,7 +86,7 @@ fun AppBar() {
                 .clickable {
 
                 }
-                .size(36.dp)
+                .size(26.dp)
         )
         Image(
             painter = painterResource(id = R.drawable.set),
@@ -96,7 +95,7 @@ fun AppBar() {
                 .clickable {
 
                 }
-                .size(36.dp)
+                .size(26.dp)
         )
     }
 }

@@ -35,7 +35,6 @@ fun AnimatedLogo(onAnimationEnd: () -> Unit = {}) {
         // Zoom in
         expanded = true
         delay(3000)
-
         // Zoom out
         expanded = false
         delay(700)

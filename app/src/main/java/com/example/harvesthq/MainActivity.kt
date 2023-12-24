@@ -17,7 +17,6 @@ class MainActivity : ComponentActivity() {
             HarvestHQTheme {
                 // Create a NavController
                 val navController = rememberNavController()
-
                 // Set up navigation
                 SetupNavigation(navController)
             }

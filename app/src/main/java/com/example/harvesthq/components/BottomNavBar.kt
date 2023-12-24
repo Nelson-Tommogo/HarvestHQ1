@@ -40,19 +40,24 @@ fun BottomNavComposable(navController: NavHostController) {
 
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = colorResource(id = R.color.green1) // Set the background color to red
+        color = colorResource(id = R.color.green1)
     ) {
         Scaffold(
             bottomBar = {
                 BottomAppBar(
-                    modifier = Modifier.background(Color.Red), // Set the background color to red
-                    contentColor = Color.Black // Set the text color to black
+                    modifier = Modifier.background(Color.Red),
+                    contentColor = Color.Black
                 ) {
                     items.forEachIndexed { index, (icon, title) ->
                         IconButton(
                             onClick = {
                                 selectedItemIndex = index
-                                // Handle navigation
+                                when (index) {
+                                    0 -> navController.navigate("home")
+                                    1 -> navController.navigate("community")
+                                    2 -> navController.navigate("articles")
+                                    3 -> navController.navigate("settings")
+                                }
                             },
                             modifier = Modifier.weight(1f),
                             content = {

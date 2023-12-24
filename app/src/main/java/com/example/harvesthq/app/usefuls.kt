@@ -124,35 +124,44 @@ fun AppBarone(navController: NavController) {
         Image(
             painter = painterResource(id = R.drawable.harvesthqlogo),
             contentDescription = "Harvest Logo",
-            modifier = Modifier.clickable {
-                navController.navigate("home")
-            }.size(26.dp)
+            modifier = Modifier
+                .clickable {
+                    navController.navigate("home")
+                }
+                .weight(2f) // Adjust the weight as needed
         )
         Image(
             painter = painterResource(id = R.drawable.search),
             contentDescription = "Search",
             modifier = Modifier
                 .clickable {
+                    // Add your action here
                 }
                 .size(26.dp)
+                .weight(1f) // Adjust the weight as needed
         )
         Image(
             painter = painterResource(id = R.drawable.scanqr),
             contentDescription = "QRCODE",
             modifier = Modifier
                 .clickable {
+                    // Add your action here
                 }
                 .size(26.dp)
+                .weight(1f) // Adjust the weight as needed
         )
         Image(
             painter = painterResource(id = R.drawable.set),
             contentDescription = "setting",
             modifier = Modifier
                 .clickable {
+                    // Add your action here
                 }
                 .size(26.dp)
+                .weight(1f) // Adjust the weight as needed
         )
     }
+
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
