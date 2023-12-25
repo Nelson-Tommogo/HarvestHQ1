@@ -1,5 +1,4 @@
 package com.example.harvesthq.navigation
-
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -49,7 +48,7 @@ fun Topbar() {
         Image(
             painter = painterResource(id = R.drawable.harvesthqlogo),
             contentDescription = "Harvest Logo",
-            modifier = Modifier.size(100.dp)
+            modifier = Modifier.size(120.dp)
         )
         Image(
             painter = painterResource(id = R.drawable.search),
@@ -57,7 +56,7 @@ fun Topbar() {
             modifier = Modifier
                 .clickable {
                 }
-                .size(26.dp)
+                .size(20.dp)
         )
 
         Image(
@@ -67,7 +66,7 @@ fun Topbar() {
                 .clickable {
 
                 }
-                .size(26.dp)
+                .size(20.dp)
         )
         Image(
             painter = painterResource(id = R.drawable.set),
@@ -76,7 +75,7 @@ fun Topbar() {
                 .clickable {
 
                 }
-                .size(26.dp)
+                .size(20.dp)
         )
     }
 }

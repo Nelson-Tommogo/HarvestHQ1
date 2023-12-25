@@ -31,7 +31,7 @@ fun articles() {
     Column(
         modifier = Modifier.fillMaxSize(),
         content = {
-            articlebar()
+            Articlebar()
             writer()
             writerbody()
         }
@@ -39,7 +39,7 @@ fun articles() {
 }
 @Composable
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-fun articlebar() {
+fun Articlebar() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
