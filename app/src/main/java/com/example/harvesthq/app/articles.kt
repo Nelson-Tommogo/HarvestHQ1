@@ -92,7 +92,7 @@ fun writer() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(250.dp)
+            .height(350.dp)
             .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
         onClick = {
@@ -123,7 +123,7 @@ fun writerbody() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(250.dp)
+            .height(350.dp)
             .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
         onClick = {
