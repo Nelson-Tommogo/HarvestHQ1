@@ -24,18 +24,18 @@ import com.example.harvesthq.R
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun topbarcomposable() {
+fun Topbarcomposable() {
     Column(
         modifier = Modifier.fillMaxSize(),
         content = {
-            topbar()
+            Topbar()
 
         }
     )
 }
 @Composable
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-fun topbar() {
+fun Topbar() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -83,6 +83,6 @@ fun topbar() {
 
 @Preview
 @Composable
-fun articlePreview() {
-    topbarcomposable()
+fun TopBarPreview() {
+    Topbarcomposable()
 }
