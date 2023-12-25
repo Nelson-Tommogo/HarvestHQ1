@@ -37,11 +37,6 @@ fun articles() {
         }
     )
 }
-
-
-
-
-
 @Composable
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 fun articlebar() {
