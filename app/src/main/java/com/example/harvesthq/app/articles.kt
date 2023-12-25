@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
-import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -34,11 +33,7 @@ fun articles() {
         modifier = Modifier.fillMaxSize(),
         content = {
             articlebar()
-            Adverts()
-            Adds()
-            HHQP()
-            FOP()
-            ADDS()
+            writer()
         }
     )
 }
@@ -127,77 +122,10 @@ fun writer() {
     }
 }
 
-@Composable
-fun writerpage(text: String, backgroundColor: Int) {
-    ElevatedButton(
-        onClick = {},
-        modifier = Modifier
-            .background(color = colorResource(id = backgroundColor))
-            .padding(16.dp)
-    ) {
-        Text(text)
-    }
-}
 
-
-
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun FOP() {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(300.dp)
-            .background(color = colorResource(id = R.color.green1))
-            .padding(16.dp),
-        onClick = {
-
-        }
-    ) {
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text("Categories")
-
-            // Nested Cards
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp)
-            ) {
-                // First row with two big cards
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(100.dp)
-                        .padding(16.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    ButtonWithText("Vegetable", R.color.homecards)
-                    ButtonWithText("Fruits", R.color.homecards)
-                }
-
-                // Second row with three smaller cards
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(100.dp)
-                        .padding(16.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    ButtonWithText("Weed Control", R.color.homecards)
-                    ButtonWithText("Pest Control", R.color.homecards)
-                }
-            }
-        }
-    }
-}
 @Preview
 @Composable
-fun HomePagePreview() {
+fun articlePreview() {
     val navController = rememberNavController()
     HomePage()
 }
