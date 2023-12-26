@@ -4,9 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -21,17 +19,16 @@ import androidx.compose.ui.unit.dp
 import com.example.harvesthq.R
 
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@Composable
-fun Topbarcomposable() {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        content = {
-            Topbar()
-
-        }
-    )
-}
+//@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+//@Composable
+//fun Topbarcomposable() {
+//    Column(
+//        modifier = Modifier.fillMaxSize(),
+//        content = {
+//            Topbar()
+//        }
+//    )
+//}
 @Composable
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 fun Topbar() {
@@ -83,5 +80,5 @@ fun Topbar() {
 @Preview
 @Composable
 fun TopBarPreview() {
-    Topbarcomposable()
+    Topbar()
 }
