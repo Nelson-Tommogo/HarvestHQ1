@@ -11,7 +11,7 @@ import com.example.harvesthq.navigation.Topbar
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun community() {
+fun Community() {
     Column(
         modifier = Modifier.fillMaxSize(),
         content = {
@@ -23,6 +23,6 @@ fun community() {
 
 @Preview
 @Composable
-fun communityPreview(){
-    settings()
+fun CommunityPreview(){
+    Community()
 }

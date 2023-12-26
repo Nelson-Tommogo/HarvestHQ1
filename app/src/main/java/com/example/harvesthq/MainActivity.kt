@@ -28,7 +28,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainPreview() {
     HarvestHQTheme {
-        // Preview your main screen
         AnimatedLogo {}
     }
 }
