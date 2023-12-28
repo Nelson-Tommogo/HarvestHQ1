@@ -61,21 +61,14 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
                 contentScale = ContentScale.Crop
             )
             Text(
-                text = "Hi!",
-                fontSize = 20.sp,
+                text = "Hi!\n  Welcome",
+                fontSize = 26.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp),
                 color = colorResource(id = R.color.green1)
             )
             Text(
-                text = "Welcome ",
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(bottom = 16.dp),
-                color = colorResource(id = R.color.green1)
-            )
-            Text(
-                text = "Let's create an Account",
+                text = "Im waiting for you, please enter your detail",
                 fontSize = 14.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp),

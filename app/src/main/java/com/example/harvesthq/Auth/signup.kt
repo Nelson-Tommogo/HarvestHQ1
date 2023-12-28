@@ -76,21 +76,14 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             contentScale = ContentScale.Crop
         )
         Text(
-            text = "Hi!",
-            fontSize = 20.sp,
+            text = "Hi!\n Welcome",
+            fontSize = 26.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(bottom = 16.dp),
             color = colorResource(id = R.color.green1)
         )
         Text(
-            text = "Welcome ",
-            fontSize = 20.sp,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(bottom = 16.dp),
-            color = colorResource(id = R.color.green1)
-        )
-        Text(
-            text = "Let's create an Account",
+            text = "Let's create Your Account",
             fontSize = 14.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(bottom = 16.dp),
