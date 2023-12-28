@@ -99,7 +99,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
         OutlinedTextField(
             value = firstName,
             onValueChange = { firstName = it },
-            label = { Text("First Name") },
+            label = { Text("Full Name") },
             keyboardOptions = KeyboardOptions.Default.copy(
                 keyboardType = KeyboardType.Text,
                 imeAction = ImeAction.Done
@@ -116,25 +116,25 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
                 .clip(MaterialTheme.shapes.extraSmall)
         )
 
-        OutlinedTextField(
-            value = lastName,
-            onValueChange = { lastName = it },
-            label = { Text("Last Name") },
-            keyboardOptions = KeyboardOptions.Default.copy(
-                keyboardType = KeyboardType.Text,
-                imeAction = ImeAction.Done
-            ),
-            textStyle = LocalTextStyle.current.copy(color = green1),
-            colors = TextFieldDefaults.outlinedTextFieldColors(
-                cursorColor = green2,
-                unfocusedLabelColor =colorResource(id = R.color.green1)
-
-                ),
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = 16.dp)
-                .clip(MaterialTheme.shapes.extraSmall)
-        )
+//        OutlinedTextField(
+//            value = lastName,
+//            onValueChange = { lastName = it },
+//            label = { Text("Last Name") },
+//            keyboardOptions = KeyboardOptions.Default.copy(
+//                keyboardType = KeyboardType.Text,
+//                imeAction = ImeAction.Done
+//            ),
+//            textStyle = LocalTextStyle.current.copy(color = green1),
+//            colors = TextFieldDefaults.outlinedTextFieldColors(
+//                cursorColor = green2,
+//                unfocusedLabelColor =colorResource(id = R.color.green1)
+//
+//                ),
+//            modifier = Modifier
+//                .fillMaxWidth()
+//                .padding(bottom = 16.dp)
+//                .clip(MaterialTheme.shapes.extraSmall)
+//        )
 
         OutlinedTextField(
             value = email,
@@ -181,16 +181,16 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
         ElevatedButton(
             {
                 onSignup(firstName, lastName, email, password)
-                // Navigate to the login screen
                 navController.navigate("login") // "login" is the route to your login screen
             },
-            Modifier.fillMaxWidth(),
+            Modifier.fillMaxWidth()
+                .background(color = colorResource(id = R.color.green11)),
             colors = ButtonDefaults.elevatedButtonColors(
                 contentColor = colorResource(id = R.color.green1)
             )
         ) {
             Text("Sign Up",
-                fontSize = 20.sp,
+                fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp),
                 color = colorResource(id = R.color.green1)
@@ -198,7 +198,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
         }
         Text(
             text = "Or Sign up With",
-            fontSize = 16.sp,
+            fontSize = 12.sp,
             fontWeight = FontWeight.SemiBold,
             modifier = Modifier.padding(top = 16.dp),
             color = colorResource(id = R.color.green1)

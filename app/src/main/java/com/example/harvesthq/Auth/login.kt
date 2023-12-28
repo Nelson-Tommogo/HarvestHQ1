@@ -61,8 +61,22 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
                 contentScale = ContentScale.Crop
             )
             Text(
-                text = "Sign In",
-                fontSize = 26.sp,
+                text = "Hi!",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(bottom = 16.dp),
+                color = colorResource(id = R.color.green1)
+            )
+            Text(
+                text = "Welcome ",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(bottom = 16.dp),
+                color = colorResource(id = R.color.green1)
+            )
+            Text(
+                text = "Let's create an Account",
+                fontSize = 14.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp),
                 color = colorResource(id = R.color.green1)
@@ -227,5 +241,5 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
 @Composable
 fun LoginPreview() {
     val navController = rememberNavController()
-    Logintrial(navController = navController, onlogin = { _, _ -> })
+    Login(navController = navController, onlogin = { _, _ -> })
 }
