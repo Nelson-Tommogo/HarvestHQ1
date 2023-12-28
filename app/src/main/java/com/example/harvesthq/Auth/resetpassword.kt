@@ -5,15 +5,19 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -71,16 +75,34 @@ import com.example.harvesthq.R
         )
 
         Text(
-            text = "Reset Password",
+            text = "Oh, No!\n I Forgot",
             fontSize = 26.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(bottom = 16.dp),
             color = colorResource(id = R.color.green1)
         )
+        Text(
+            text = "Enter your email we'll send you a link",
+            fontSize = 12.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 16.dp),
+            color = colorResource(id = R.color.green1)
+        )
+
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
-            label = { Text("Email") },
+            label = {
+                Row {
+                    Icon(
+                        imageVector = Icons.Default.Email,
+                        contentDescription = null,
+                        tint = green1,
+                        modifier = Modifier.padding(end = 8.dp)
+                    )
+                    Text("Email")
+                }
+            },
             keyboardOptions = KeyboardOptions.Default.copy(
                 keyboardType = KeyboardType.Text,
                 imeAction = ImeAction.Done
@@ -89,8 +111,7 @@ import com.example.harvesthq.R
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 cursorColor = green2,
                 unfocusedLabelColor = colorResource(id = R.color.green11)
-
-                ),
+            ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
@@ -99,13 +120,14 @@ import com.example.harvesthq.R
         // Button for signup
         ElevatedButton(
             onClick = { onreRet(email) },
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth()
+                .background(color = colorResource(id = R.color.green11)),
             colors = ButtonDefaults.elevatedButtonColors(
                 contentColor = colorResource(id = R.color.green11)
         ))
         {
             Text("Password Reset Link",
-                fontSize = 20.sp,
+                fontSize = 14.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp),
                 color = colorResource(id = R.color.green1)
@@ -113,7 +135,7 @@ import com.example.harvesthq.R
         }
         Text(
             text = "Remember Your Account?",
-            fontSize = 14.sp,
+            fontSize = 12.sp,
             fontWeight = FontWeight.SemiBold,
             modifier = Modifier.padding(top = 16.dp),
             color = colorResource(id = R.color.green1)
@@ -126,7 +148,7 @@ import com.example.harvesthq.R
             },
             modifier = Modifier.padding(top = 16.dp),
             style = TextStyle(
-                fontSize = 16.sp,
+                fontSize = 14.sp,
                 fontWeight = FontWeight.ExtraBold,
                 color =colorResource(id = R.color.green1)
             )

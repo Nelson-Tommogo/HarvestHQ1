@@ -7,6 +7,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -56,7 +59,7 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
                 contentDescription = "logo",
                 modifier = Modifier
                     .size(250.dp)
-                    .clip(shape = MaterialTheme.shapes.medium)
+                    .clip(shape = MaterialTheme.shapes.extraSmall)
                     .padding(bottom = 16.dp),
                 contentScale = ContentScale.Crop
             )
@@ -78,7 +81,17 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
             OutlinedTextField(
                 value = email,
                 onValueChange = { email = it },
-                label = { Text("Email") },
+                label = {
+                    Row {
+                        Icon(
+                            imageVector = Icons.Default.Email,
+                            contentDescription = null,
+                            tint = green1,
+                            modifier = Modifier.padding(end = 8.dp)
+                        )
+                        Text("Email")
+                    }
+                },
                 keyboardOptions = KeyboardOptions.Default.copy(
                     keyboardType = KeyboardType.Text,
                     imeAction = ImeAction.Done
@@ -92,10 +105,21 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
                     .fillMaxWidth()
                     .padding(bottom = 16.dp)
             )
+
             OutlinedTextField(
                 value = password,
                 onValueChange = { password = it },
-                label = { Text("Password") },
+                label = {
+                    Row {
+                        Icon(
+                            imageVector = Icons.Default.Lock,
+                            contentDescription = null,
+                            tint = green1,
+                            modifier = Modifier.padding(end = 8.dp)
+                        )
+                        Text("Password")
+                    }
+                },
                 visualTransformation = PasswordVisualTransformation(),
                 keyboardOptions = KeyboardOptions.Default.copy(
                     keyboardType = KeyboardType.Password,
@@ -110,6 +134,7 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
                     .fillMaxWidth()
                     .padding(bottom = 16.dp)
             )
+
             ClickableText(
                 text = AnnotatedString("Forgot your password?"),
                 onClick = {
@@ -132,14 +157,15 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
                     onlogin(email, password)
                     navController.navigate("BottomNavBar")
                 },
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth()
+                    .background(color = colorResource(id = R.color.green11)),
                 colors = ButtonDefaults.elevatedButtonColors(
                     contentColor = colorResource(id = R.color.green1)
                 )
             ) {
                 Text(
                     "Sign In",
-                    fontSize = 20.sp,
+                    fontSize = 12.sp,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(bottom = 16.dp),
                     color = colorResource(id = R.color.green11)
@@ -147,7 +173,7 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
             }
             Text(
                 text = "Or Sign In using",
-                fontSize = 16.sp,
+                fontSize = 12.sp,
                 fontWeight = FontWeight.SemiBold,
                 modifier = Modifier.padding(top = 16.dp),
                 color = colorResource(id = R.color.green1)
@@ -221,7 +247,7 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
                 },
                 modifier = Modifier.padding(bottom = 16.dp),
                 style = TextStyle(
-                    fontSize = 16.sp,
+                    fontSize = 14.sp,
                     fontWeight = FontWeight.ExtraBold,
                     color = colorResource(id = R.color.green1)
                 )

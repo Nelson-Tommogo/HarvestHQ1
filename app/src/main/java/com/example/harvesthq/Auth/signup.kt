@@ -13,9 +13,14 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -49,7 +54,7 @@ import com.example.harvesthq.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SignupScreen(navController: NavHostController, onSignup: (String, String, String, String) -> Unit) {
-    var firstName by remember { mutableStateOf("") }
+    var fullname by remember { mutableStateOf("") }
     var lastName by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -71,7 +76,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             contentDescription = "logo",
             modifier = Modifier
                 .size(250.dp)
-                .clip(shape = MaterialTheme.shapes.medium)
+                .clip(shape = MaterialTheme.shapes.extraSmall)
                 .padding(bottom = 0.dp),
             contentScale = ContentScale.Crop
         )
@@ -90,9 +95,19 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             color = colorResource(id = R.color.green1)
         )
         OutlinedTextField(
-            value = firstName,
-            onValueChange = { firstName = it },
-            label = { Text("Full Name") },
+            value = fullname,
+            onValueChange = { fullname = it },
+            label = {
+                Row {
+                    Icon(
+                        imageVector = Icons.Default.Person,
+                        contentDescription = null,
+                        tint = green1,
+                        modifier = Modifier.padding(end = 8.dp)
+                    )
+                    Text("Full Name")
+                }
+            },
             keyboardOptions = KeyboardOptions.Default.copy(
                 keyboardType = KeyboardType.Text,
                 imeAction = ImeAction.Done
@@ -101,13 +116,13 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 cursorColor = green2,
                 unfocusedLabelColor = colorResource(id = R.color.green1)
-
-                ),
+            ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
                 .clip(MaterialTheme.shapes.extraSmall)
         )
+
 
 //        OutlinedTextField(
 //            value = lastName,
@@ -129,10 +144,21 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
 //                .clip(MaterialTheme.shapes.extraSmall)
 //        )
 
+
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
-            label = { Text("Email") },
+            label = {
+                Row {
+                    Icon(
+                        imageVector = Icons.Default.Email,
+                        contentDescription = null,
+                        tint = green1,
+                        modifier = Modifier.padding(end = 8.dp)
+                    )
+                    Text("Email")
+                }
+            },
             keyboardOptions = KeyboardOptions.Default.copy(
                 keyboardType = KeyboardType.Text,
                 imeAction = ImeAction.Done
@@ -140,19 +166,27 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             textStyle = LocalTextStyle.current.copy(color = green1),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 cursorColor = green2,
-                unfocusedLabelColor = colorResource(id = R.color.green1)
-
-                ),
+                unfocusedLabelColor = colorResource(id = R.color.green11)
+            ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
-                .clip(MaterialTheme.shapes.extraSmall)
         )
 
         OutlinedTextField(
             value = password,
             onValueChange = { password = it },
-            label = { Text("Password") },
+            label = {
+                Row {
+                    Icon(
+                        imageVector = Icons.Default.Lock,
+                        contentDescription = null,
+                        tint = green1,
+                        modifier = Modifier.padding(end = 8.dp)
+                    )
+                    Text("Password")
+                }
+            },
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions.Default.copy(
                 keyboardType = KeyboardType.Password,
@@ -161,19 +195,18 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             textStyle = LocalTextStyle.current.copy(color = green1),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 cursorColor = green2,
-                unfocusedLabelColor = colorResource(id = R.color.green1)
+                unfocusedLabelColor = colorResource(id = R.color.green11)
             ),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
-                .clip(MaterialTheme.shapes.extraSmall)
         )
 
 
         // Button for signup
         ElevatedButton(
             {
-                onSignup(firstName, lastName, email, password)
+                onSignup(fullname, lastName, email, password)
                 navController.navigate("login") // "login" is the route to your login screen
             },
             Modifier.fillMaxWidth()
@@ -183,7 +216,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             )
         ) {
             Text("Sign Up",
-                fontSize = 16.sp,
+                fontSize = 14.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp),
                 color = colorResource(id = R.color.green1)
@@ -267,7 +300,7 @@ fun SignupScreen(navController: NavHostController, onSignup: (String, String, St
             },
             modifier = Modifier.padding(bottom = 16.dp),
             style = TextStyle(
-                fontSize = 16.sp,
+                fontSize = 12.sp,
                 fontWeight = FontWeight.ExtraBold,
                 color =colorResource(id = R.color.green1)
             )

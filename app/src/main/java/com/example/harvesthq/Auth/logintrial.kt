@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -102,7 +104,17 @@ fun Logintrial(navController: NavHostController, onlogin: (String, String) -> Un
             OutlinedTextField(
                 value = password,
                 onValueChange = { password = it },
-                label = { Text("Password") },
+                label = {
+                    Row {
+                        Icon(
+                            imageVector = Icons.Default.Lock,
+                            contentDescription = null,
+                            tint = green1,
+                            modifier = Modifier.padding(end = 8.dp)
+                        )
+                        Text("Password")
+                    }
+                },
                 visualTransformation = PasswordVisualTransformation(),
                 keyboardOptions = KeyboardOptions.Default.copy(
                     keyboardType = KeyboardType.Password,
@@ -117,6 +129,7 @@ fun Logintrial(navController: NavHostController, onlogin: (String, String) -> Un
                     .fillMaxWidth()
                     .padding(bottom = 16.dp)
             )
+
             ClickableText(
                 text = AnnotatedString("Forgot your password?"),
                 onClick = {
