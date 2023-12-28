@@ -1,3 +1,4 @@
+
 package com.example.harvesthq.components
 
 import android.annotation.SuppressLint
@@ -33,8 +34,8 @@ fun BottomNavComposable(navController: NavHostController) {
     val green11 = colorResource(id = R.color.green11)
     val items = listOf(
         Icons.Default.Home to "Home",
-        Icons.Default.Search to "Community",
-        Icons.Default.Email to "Articles",
+        Icons.Default.Search to "Shop",
+        Icons.Default.Email to "HQs",
         Icons.Default.Settings to "Settings"
     )
 
@@ -58,8 +59,8 @@ fun BottomNavComposable(navController: NavHostController) {
                                 selectedItemIndex = index
                                 when (index) {
                                     0 -> navController.navigate("home")
-                                    1 -> navController.navigate("community")
-                                    2 -> navController.navigate("articles")
+                                    1 -> navController.navigate("shop")
+                                    2 -> navController.navigate("hqs")
                                     3 -> navController.navigate("settings")
                                 }
                             },
@@ -99,4 +100,3 @@ fun BottomNavComposablePreview() {
     val navController = rememberNavController()
     BottomNavComposable(navController = navController)
 }
-
