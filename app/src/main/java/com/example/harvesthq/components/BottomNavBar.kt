@@ -11,8 +11,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -29,12 +29,16 @@ import com.example.harvesthq.R
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun BottomNavComposable(navController: NavHostController) {
+    val appbarcolor = colorResource(id = R.color.green10) // Replace R.color.blue with your desired blue color resource ID
     val green1 = colorResource(id = R.color.green1)
     val green2 = colorResource(id = R.color.green2)
     val green11 = colorResource(id = R.color.green11)
+
+    val bottomAppBarHeight = 80.dp // Adjust the height as needed
+
     val items = listOf(
         Icons.Default.Home to "Home",
-        Icons.Default.Search to "Shop",
+        Icons.Default.ShoppingCart to "Shop",
         Icons.Default.Email to "HQs",
         Icons.Default.Settings to "Settings"
     )
@@ -45,23 +49,25 @@ fun BottomNavComposable(navController: NavHostController) {
 
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = green1
+        color = green2
     ) {
         Scaffold(
             bottomBar = {
                 BottomAppBar(
-                    modifier = Modifier.background(green1),
-                    contentColor = green2
+                    modifier = Modifier
+                        .background(appbarcolor) // Set the background color to blue
+                        .height(bottomAppBarHeight), // Set the height of the BottomAppBar
+                    contentColor = green1
                 ) {
                     items.forEachIndexed { index, (icon, title) ->
                         IconButton(
                             onClick = {
                                 selectedItemIndex = index
                                 when (index) {
-                                    0 -> navController.navigate("home")
-                                    1 -> navController.navigate("shop")
-                                    2 -> navController.navigate("hqs")
-                                    3 -> navController.navigate("settings")
+                                    0 -> navController.navigate("")
+                                    1 -> navController.navigate("")
+                                    2 -> navController.navigate("")
+                                    3 -> navController.navigate("")
                                 }
                             },
                             modifier = Modifier.weight(1f),
@@ -73,12 +79,12 @@ fun BottomNavComposable(navController: NavHostController) {
                                     Icon(
                                         imageVector = icon,
                                         contentDescription = title,
-                                        tint = if (selectedItemIndex == index) green2 else green11
+                                        tint = if (selectedItemIndex == index) appbarcolor else green11
                                     )
                                     Spacer(modifier = Modifier.height(4.dp))
                                     Text(
                                         text = title,
-                                        color = if (selectedItemIndex == index) green2 else green11,
+                                        color = if (selectedItemIndex == index) appbarcolor else green11,
                                         fontSize = 12.sp
                                     )
                                 }
@@ -93,6 +99,7 @@ fun BottomNavComposable(navController: NavHostController) {
         )
     }
 }
+
 
 @Preview
 @Composable
