@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "897318903527",
+    "project_id": "harvesthqapp",
+    "storage_bucket": "harvesthqapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897318903527:android:43ff38a42e0d98522c8c42",
+        "android_client_info": {
+          "package_name": "com.example.harvesthq"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnJkT2wKuaYYor5zfGK6W-Fr0F3jMHtUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
