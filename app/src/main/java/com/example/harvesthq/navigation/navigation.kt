@@ -8,6 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.harvesthq.Auth.reset
+import com.example.harvesthq.app.HomePage
 import com.example.harvesthq.components.BottomNavComposable
 
 sealed class Screen(val route: String) {
@@ -16,6 +17,7 @@ sealed class Screen(val route: String) {
     object LogIn : Screen("login")
     object reset : Screen("resetpassword")
     object Home : Screen("BottomNavBar")
+    object homescreen : Screen("Home")
 
 }
 
@@ -41,6 +43,9 @@ fun SetupNavigation(navController: NavHostController) {
         }
         composable(Screen.Home.route){
             BottomNavComposable(navController = navController)
+        }
+        composable(Screen.homescreen.route){
+            HomePage(navController = navController)
         }
     }
 }

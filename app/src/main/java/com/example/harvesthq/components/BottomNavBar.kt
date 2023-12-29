@@ -29,12 +29,12 @@ import com.example.harvesthq.R
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun BottomNavComposable(navController: NavHostController) {
-    val appbarcolor = colorResource(id = R.color.green10) // Replace R.color.blue with your desired blue color resource ID
+    val appbarcolor = colorResource(id = R.color.green10)
     val green1 = colorResource(id = R.color.green1)
     val green2 = colorResource(id = R.color.green2)
     val green11 = colorResource(id = R.color.green11)
 
-    val bottomAppBarHeight = 80.dp // Adjust the height as needed
+    val bottomAppBarHeight = 80.dp
 
     val items = listOf(
         Icons.Default.Home to "Home",
@@ -49,14 +49,14 @@ fun BottomNavComposable(navController: NavHostController) {
 
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = green2
+        color = green2,
     ) {
         Scaffold(
             bottomBar = {
                 BottomAppBar(
                     modifier = Modifier
-                        .background(appbarcolor) // Set the background color to blue
-                        .height(bottomAppBarHeight), // Set the height of the BottomAppBar
+                        .background(appbarcolor)
+                        .height(bottomAppBarHeight),
                     contentColor = green1
                 ) {
                     items.forEachIndexed { index, (icon, title) ->
@@ -64,10 +64,10 @@ fun BottomNavComposable(navController: NavHostController) {
                             onClick = {
                                 selectedItemIndex = index
                                 when (index) {
-                                    0 -> navController.navigate("")
-                                    1 -> navController.navigate("")
-                                    2 -> navController.navigate("")
-                                    3 -> navController.navigate("")
+                                    0 -> navController.navigate("Home")
+                                    1 -> navController.navigate("shop")
+                                    2 -> navController.navigate("hqs")
+                                    3 -> navController.navigate("settings")
                                 }
                             },
                             modifier = Modifier.weight(1f),
@@ -81,7 +81,7 @@ fun BottomNavComposable(navController: NavHostController) {
                                         contentDescription = title,
                                         tint = if (selectedItemIndex == index) appbarcolor else green11
                                     )
-                                    Spacer(modifier = Modifier.height(4.dp))
+                                    Spacer(modifier = Modifier.height(-15.dp))
                                     Text(
                                         text = title,
                                         color = if (selectedItemIndex == index) appbarcolor else green11,
@@ -93,12 +93,14 @@ fun BottomNavComposable(navController: NavHostController) {
                     }
                 }
             },
+            modifier = Modifier.background(color = appbarcolor),
             content = {
 
             }
         )
     }
 }
+
 
 
 @Preview

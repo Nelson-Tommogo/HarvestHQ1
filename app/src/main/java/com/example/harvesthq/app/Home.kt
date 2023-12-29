@@ -23,12 +23,13 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.harvesthq.R
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun HomePage() {
+fun HomePage(navController: NavHostController) {
     Column(
         modifier = Modifier.fillMaxSize(),
         content = {
@@ -240,5 +241,5 @@ fun Adverts() {
 @Composable
 fun HomePagePreview() {
     val navController = rememberNavController()
-    HomePage()
+    HomePage(navController = navController)
 }
