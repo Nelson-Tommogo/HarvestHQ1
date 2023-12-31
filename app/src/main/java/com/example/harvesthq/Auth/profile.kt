@@ -89,9 +89,9 @@ fun Profile() {
 fun picture() {
     Card(
         modifier = Modifier
-            .fillMaxWidth()
+            .width(150.dp)
             .height(150.dp)
-            .background(color = colorResource(id = R.color.green1))
+            .background(color = colorResource(id = R.color.green10))
             .padding(16.dp),
         onClick = {
 
@@ -100,7 +100,7 @@ fun picture() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .width(150.dp),
+                .width(50.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -109,7 +109,7 @@ fun picture() {
             // Nested Cards
             Column(
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .width(50.dp)
                     .padding(16.dp)
             ) {
 
