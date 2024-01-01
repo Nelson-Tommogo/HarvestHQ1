@@ -91,7 +91,7 @@ fun picture() {
         modifier = Modifier
             .width(150.dp)
             .height(150.dp)
-            .background(color = colorResource(id = R.color.green10))
+            .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
         onClick = {
 

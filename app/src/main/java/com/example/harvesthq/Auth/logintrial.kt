@@ -145,8 +145,6 @@ fun Logintrial(navController: NavHostController, onlogin: (String, String) -> Un
                     color = colorResource(id = R.color.green1),
                 )
             )
-
-            // Button for sign-in
             ElevatedButton(
                 onClick = {
                     onlogin(email, password)
@@ -181,14 +179,14 @@ fun Logintrial(navController: NavHostController, onlogin: (String, String) -> Un
             ) {
                 val imageSize = 30.dp
 
-                // Google
+
                 Box(
                     modifier = Modifier
                         .size(imageSize)
                         .background(color = colorResource(id = R.color.green1))
                         .clip(CircleShape)
                         .clickable {
-                            // Handle Google click
+
                         }
                 ) {
                     Image(
@@ -198,14 +196,12 @@ fun Logintrial(navController: NavHostController, onlogin: (String, String) -> Un
                     )
                 }
 
-                // Facebook
                 Box(
                     modifier = Modifier
                         .size(imageSize)
                         .background(color = colorResource(id = R.color.green1))
                         .clip(CircleShape)
                         .clickable {
-                            // Handle Facebook click
                         }
                 ) {
                     Image(
@@ -214,15 +210,12 @@ fun Logintrial(navController: NavHostController, onlogin: (String, String) -> Un
                         modifier = Modifier.size(imageSize)
                     )
                 }
-
-                // Twitter
                 Box(
                     modifier = Modifier
                         .size(imageSize)
                         .background(color = colorResource(id = R.color.green1))
                         .clip(CircleShape)
                         .clickable {
-                            // Handle Twitter click
                         }
                 ) {
                     Image(
@@ -236,7 +229,6 @@ fun Logintrial(navController: NavHostController, onlogin: (String, String) -> Un
             ClickableText(
                 text = AnnotatedString("Don't Have Account? Sign Up"),
                 onClick = {
-                    // Navigate to your login page
                     navController.navigate("signup")
                 },
                 modifier = Modifier.padding(bottom = 16.dp),

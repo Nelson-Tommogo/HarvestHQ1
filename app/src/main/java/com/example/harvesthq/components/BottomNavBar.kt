@@ -39,7 +39,7 @@ fun BottomNavComposable(navController: NavHostController) {
     val items = listOf(
         Icons.Default.Home to "Home",
         Icons.Default.ShoppingCart to "Shop",
-        Icons.Default.Email to "HQs",
+        Icons.Default.Email to "HQS",
         Icons.Default.Settings to "Settings"
     )
 
@@ -67,7 +67,7 @@ fun BottomNavComposable(navController: NavHostController) {
                                     0 -> navController.navigate("Home")
                                     1 -> navController.navigate("shop")
                                     2 -> navController.navigate("hqs")
-                                    3 -> navController.navigate("settings")
+                                    3 -> navController.navigate("profile")
                                 }
                             },
                             modifier = Modifier.weight(1f),
