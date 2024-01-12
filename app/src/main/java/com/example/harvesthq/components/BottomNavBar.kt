@@ -13,9 +13,17 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.ShoppingCart
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
@@ -26,14 +34,14 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.harvesthq.R
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter", "AutoboxingStateCreation")
 @Composable
 fun BottomNavComposable(navController: NavHostController) {
     val appbarcolor = colorResource(id = R.color.green10)
     val green1 = colorResource(id = R.color.green1)
     val green2 = colorResource(id = R.color.green2)
     val green11 = colorResource(id = R.color.green11)
-
+    
     val bottomAppBarHeight = 80.dp
 
     val items = listOf(
@@ -46,7 +54,6 @@ fun BottomNavComposable(navController: NavHostController) {
     var selectedItemIndex by rememberSaveable {
         mutableStateOf(0)
     }
-
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = green2,

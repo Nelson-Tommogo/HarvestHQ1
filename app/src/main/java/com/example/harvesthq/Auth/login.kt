@@ -37,10 +37,8 @@ import com.example.harvesthq.R
 fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-    val white = colorResource(id = R.color.white)
     val green1 = colorResource(id = R.color.green1)
     val green2 = colorResource(id = R.color.green2)
-    val green11 = colorResource(id = R.color.green11)
 
     Scaffold(
         modifier = Modifier

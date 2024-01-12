@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.ElevatedButton
@@ -89,7 +88,7 @@ fun Profile() {
 fun picture() {
     Card(
         modifier = Modifier
-            .width(150.dp)
+            .fillMaxWidth()
             .height(150.dp)
             .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
@@ -100,16 +99,15 @@ fun picture() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .width(50.dp),
+                .fillMaxWidth(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text("NT")
 
-            // Nested Cards
             Column(
                 modifier = Modifier
-                    .width(50.dp)
+                    .fillMaxWidth()
                     .padding(16.dp)
             ) {
 

@@ -136,7 +136,9 @@ fun HHQP() {
 @Composable
 fun ButtonWithText(text: String, backgroundColor: Int) {
     ElevatedButton(
-        onClick = {},
+        onClick = {
+
+        },
         modifier = Modifier
             .background(color = colorResource(id = backgroundColor))
             .padding(16.dp)
