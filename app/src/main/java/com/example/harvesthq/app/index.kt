@@ -70,7 +70,7 @@ fun index() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(650.dp)
+            .height(600.dp)
             .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
         onClick = {
