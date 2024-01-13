@@ -42,7 +42,7 @@ fun BottomNavComposable(navController: NavHostController) {
     val green2 = colorResource(id = R.color.green2)
     val green11 = colorResource(id = R.color.green11)
     
-    val bottomAppBarHeight = 80.dp
+    val bottomAppBarHeight = 90.dp
 
     val items = listOf(
         Icons.Default.Home to "Home",
