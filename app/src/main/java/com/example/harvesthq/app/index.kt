@@ -1,7 +1,6 @@
 package com.example.harvesthq.app
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,7 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -38,34 +36,23 @@ fun show(){
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun indexpage() {
-    CustomStyledCard {
-        // Handle card click here
-    }
-}
-
-@Composable
-fun CustomStyledCard(onCardClick: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp)
-            .height(300.dp)
+            .height(150.dp)
             .background(color = colorResource(id = R.color.green1))
-            .clickable { onCardClick.invoke() },
-        shape = RoundedCornerShape(36.dp)
+            .padding(16.dp),
+        shape = RoundedCornerShape(36.dp),
+        onClick = {
+
+        }
     ) {
         Column(
-            modifier = Modifier
-                .fillMaxWidth(),
+            modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = "Agricultural Ads",
-                style = MaterialTheme.typography.headlineMedium,
-                color = colorResource(id = R.color.black)
-            )
-            // You can customize the text, styling, and add more content here
+            Text("Agricultural adds")
 
             // Nested Cards
             Column(
@@ -73,12 +60,11 @@ fun CustomStyledCard(onCardClick: () -> Unit) {
                     .fillMaxWidth()
                     .padding(16.dp)
             ) {
-                // You can add more content to the nested cards if needed
+
             }
         }
     }
 }
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -86,9 +72,10 @@ fun index() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(500.dp)
+            .height(600.dp)
             .background(color = colorResource(id = R.color.green1))
             .padding(16.dp),
+        shape = RoundedCornerShape(36.dp),
         onClick = {
 
         }

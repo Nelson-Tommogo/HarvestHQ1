@@ -254,6 +254,50 @@ fun Login(navController: NavHostController, onlogin: (String, String) -> Unit) {
     }
 }
 
+//@OptIn(ExperimentalMaterial3Api::class)
+//@Composable
+//fun indexpage() {
+//    CustomStyledCard {
+//        // Handle card click here
+//    }
+//}
+//
+//@Composable
+//fun CustomStyledCard(onCardClick: () -> Unit) {
+//    Card(
+//        modifier = Modifier
+//            .fillMaxWidth()
+//            .padding(16.dp)
+//            .height(300.dp)
+//            .background(color = colorResource(id = R.color.green1))
+//            .clickable { onCardClick.invoke() },
+//        shape = RoundedCornerShape(36.dp)
+//    ) {
+//        Column(
+//            modifier = Modifier
+//                .fillMaxWidth(),
+//            verticalArrangement = Arrangement.Center,
+//            horizontalAlignment = Alignment.CenterHorizontally
+//        ) {
+//            Text(
+//                text = "Agricultural Ads",
+//                style = MaterialTheme.typography.headlineMedium,
+//                color = colorResource(id = R.color.black)
+//            )
+//            // You can customize the text, styling, and add more content here
+//
+//            // Nested Cards
+//            Column(
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(16.dp)
+//            ) {
+//                // You can add more content to the nested cards if needed
+//            }
+//        }
+//    }
+//}
+
 @Preview
 @Composable
 fun LoginPreview() {
