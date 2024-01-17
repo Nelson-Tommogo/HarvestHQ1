@@ -1,8 +1,5 @@
 package com.example.harvesthq.app
 
-
-import android.annotation.SuppressLint
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,25 +11,24 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.harvesthq.navigation.Topbar
 
-
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun Education() {
     Column(
         modifier = Modifier.fillMaxSize(),
         content = {
             Topbar()
-            education()
+            EducationContent()
         }
     )
 }
 
 @Composable
-fun education() {
+fun EducationContent() {
     Card(
         modifier = Modifier
             .fillMaxSize()
@@ -64,20 +60,33 @@ fun education() {
                 color = MaterialTheme.colorScheme.onSurface
             )
 
-            Text(
-                text = "https://youtu.be/uQ6LZoogBl4?si=YGSBLdUIhnghFKty",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.clickable {
-
-                }
-            )
+//            VideoPlayer(url = "https://youtu.be/Z9HAy9EYKKs?si=-jR0er2nNalh8OKL")
         }
     }
 }
 
-@Preview
+//@Composable
+//fun VideoPlayer(url: String) {
+//    AndroidView(
+//        factory = { context ->
+//            WebView(context).apply {
+//                settings.javaScriptEnabled = true
+//                webViewClient = WebViewClient()
+//                webChromeClient = WebChromeClient()
+//                loadUrl(url)
+//            }
+//        },
+//        modifier = Modifier
+//            .fillMaxSize()
+//            .clickable { /* Handle clicks if needed */ }
+//    ) { webView ->
+//        // Handle WebView callbacks if needed
+//    }
+//}
+
+@Preview(device = Devices.PIXEL_4)
 @Composable
-fun EducationPreview(){
+fun EducationPreview() {
     Education()
 }
+
