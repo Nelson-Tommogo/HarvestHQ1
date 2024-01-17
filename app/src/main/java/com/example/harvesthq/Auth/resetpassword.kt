@@ -73,7 +73,6 @@ import com.example.harvesthq.R
                 .padding(bottom = 0.dp),
             contentScale = ContentScale.Crop
         )
-
         Text(
             text = "Oh, No!\n I Forgot",
             fontSize = 26.sp,

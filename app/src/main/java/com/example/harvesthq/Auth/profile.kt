@@ -58,11 +58,7 @@ fun Profile() {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Spacer(modifier = Modifier.height(16.dp))
-
-
-
             Spacer(modifier = Modifier.height(32.dp))
-
             ElevatedButton(
                 onClick = {
                 },
