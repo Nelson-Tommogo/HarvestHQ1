@@ -59,7 +59,7 @@ fun EducationContent() {
     ) {
         Column(
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth()
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
@@ -110,14 +110,14 @@ fun DropdownText(
     Column(
         modifier = Modifier.clickable { onToggleDropdown() }
     ) {
-        // Display image using Image composable
+
         Image(
             painter = painterResource(id = imageResId),
-            contentDescription = null, // Set a meaningful description if needed
-            modifier = Modifier.size(24.dp) // Adjust the size as needed
+            contentDescription = null,
+            modifier = Modifier.size(44.dp)
         )
 
-        // Display text and description
+
         Text(
             text = text,
             style = MaterialTheme.typography.bodyMedium,
