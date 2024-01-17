@@ -18,7 +18,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.harvesthq.R
-
+import com.example.harvesthq.navigation.Topbar
 
 
 @Composable
@@ -26,6 +26,7 @@ fun show(){
     Column(
         modifier = Modifier.fillMaxSize(),
         content = {
+            Topbar()
             index()
             indexpage()
         }
