@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -27,18 +28,24 @@ import com.example.harvesthq.navigation.Topbar
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun HomePage(navController: NavHostController) {
-    Column(
+    Surface(
         modifier = Modifier.fillMaxSize(),
-        content = {
-            Topbar()
-            Adverts()
-            Adds()
-            HHQP()
-            FOP()
-            ADDS()
-        }
-    )
+        color = colorResource(id = R.color.green1)
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            content = {
+                Topbar()
+                Adverts()
+                Adds()
+                HHQP()
+                FOP()
+                ADDS()
+            }
+        )
+    }
 }
+
 
 @Composable
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
