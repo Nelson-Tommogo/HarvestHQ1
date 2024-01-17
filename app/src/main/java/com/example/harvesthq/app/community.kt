@@ -16,10 +16,15 @@ fun Community() {
         modifier = Modifier.fillMaxSize(),
         content = {
             Topbar()
+            Educate()
         }
     )
 }
 
+@Composable
+fun  Educate(){
+
+}
 
 @Preview
 @Composable

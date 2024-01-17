@@ -162,7 +162,6 @@ fun onreRet(email: String) {
 @Preview
 @Composable
 fun resetPreview() {
-    // You can customize the preview parameters as needed
     val navController = rememberNavController()
     reset(navController = navController, onreset ={} )
 }
