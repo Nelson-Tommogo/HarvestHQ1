@@ -1,18 +1,18 @@
 package com.example.harvesthq.app
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Card
-import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -24,6 +24,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.harvesthq.R
@@ -66,41 +68,27 @@ fun EducationContent() {
             DropdownText(
                 text = "Crop Rotation",
                 description = "The practice of growing different crops in the same area in sequential seasons to improve soil health and prevent pests and diseases.",
+                imageResId = R.drawable.harvesthq,
                 isDropdownVisible = isDropdownVisible,
                 onToggleDropdown = { isDropdownVisible = !isDropdownVisible }
             )
 
             DropdownText(
                 text = "Agroforestry:",
-                description = " Integrating trees and shrubs into agricultural landscapes to enhance environmental sustainability, biodiversity, and overall productivity.\n" +
-                        "Hydroponics:",
+                description = "Integrating trees and shrubs into agricultural landscapes to enhance environmental sustainability, biodiversity, and overall productivity.",
+                imageResId = R.drawable.harvesthqlogohrs,
                 isDropdownVisible = isDropdownVisible,
                 onToggleDropdown = { isDropdownVisible = !isDropdownVisible }
             )
             DropdownText(
                 text = "Cover Crops",
-                description = "  Plants grown to protect and enrich the soil during periods when the main crop is not growing, preventing erosion and improving soil fertility.",
+                description = "Plants grown to protect and enrich the soil during periods when the main crop is not growing, preventing erosion and improving soil fertility.",
+                imageResId = R.drawable.harvesthq,
                 isDropdownVisible = isDropdownVisible,
                 onToggleDropdown = { isDropdownVisible = !isDropdownVisible }
             )
-            DropdownText(
-                text = "Integrated Pest Management (IPM):",
-                description = " A holistic approach to managing pests that combines biological, cultural, physical, and chemical methods to minimize damage to crops.",
-                isDropdownVisible = isDropdownVisible,
-                onToggleDropdown = { isDropdownVisible = !isDropdownVisible }
-            )
-            DropdownText(
-                text = "Precision Agriculture:",
-                description = "Utilizing technology, such as GPS and sensors, to optimize field-level management with regard to crop farming.",
-                isDropdownVisible = isDropdownVisible,
-                onToggleDropdown = { isDropdownVisible = !isDropdownVisible }
-            )
-            DropdownText(
-                text = "Drip Irrigation:",
-                description = "A water-efficient irrigation method that delivers water directly to the base of plants, minimizing water wastage.",
-                isDropdownVisible = isDropdownVisible,
-                onToggleDropdown = { isDropdownVisible = !isDropdownVisible }
-            )
+
+            // Add more DropdownText entries as needed
         }
     }
 }
@@ -109,27 +97,36 @@ fun EducationContent() {
 fun DropdownText(
     text: String,
     description: String,
+    imageResId: Int,
     isDropdownVisible: Boolean,
     onToggleDropdown: () -> Unit
 ) {
-    Row {
-        Text(text = text, style = MaterialTheme.typography.bodySmall)
-        DropdownIcon(isDropdownVisible, onToggleDropdown)
-    }
-
-    DropdownMenu(
-        expanded = isDropdownVisible,
-        onDismissRequest = { onToggleDropdown() },
+    Column(
+        modifier = Modifier.clickable { onToggleDropdown() }
     ) {
-        DropdownMenuItem(
-            onClick = {
+        // Display image using Image composable
+        Image(
+            painter = painterResource(id = imageResId),
+            contentDescription = null, // Set a meaningful description if needed
+            modifier = Modifier.size(24.dp) // Adjust the size as needed
+        )
 
-            }
-        ) {
-        }
+        // Display text and description
+        Text(
+            text = text,
+            style = MaterialTheme.typography.bodyMedium,
+            fontWeight = FontWeight.Bold,
+            color = MaterialTheme.colorScheme.onSurface
+        )
+
+        Text(
+            text = if (isDropdownVisible) description else "",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurface
+        )
     }
-
 }
+
 
 fun DropdownMenuItem(onClick: () -> Unit, interactionSource: () -> Unit) {
     TODO("Not yet implemented")
