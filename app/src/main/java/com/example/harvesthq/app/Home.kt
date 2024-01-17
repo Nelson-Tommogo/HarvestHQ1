@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.harvesthq.R
+import com.example.harvesthq.navigation.Topbar
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -34,7 +35,7 @@ fun HomePage(navController: NavHostController) {
     Column(
         modifier = Modifier.fillMaxSize(),
         content = {
-            AppBar()
+            Topbar()
             Adverts()
             Adds()
             HHQP()
