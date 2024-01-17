@@ -1,5 +1,4 @@
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -30,17 +29,22 @@ import androidx.navigation.compose.rememberNavController
 import com.example.harvesthq.R
 
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun profilepicture(navController: NavHostController) {
-    Column(
+    Surface(
         modifier = Modifier.fillMaxSize(),
-        content = {
-            picture()
-            Profile()
-        }
-    )
+        color = colorResource(id = R.color.green1)
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            content = {
+                picture()
+                Profile()
+            }
+        )
+    }
 }
+
 
 @Composable
 fun Profile() {
