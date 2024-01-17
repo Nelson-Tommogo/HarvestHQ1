@@ -68,7 +68,7 @@ fun EducationContent() {
             DropdownText(
                 text = "Crop Rotation",
                 description = "The practice of growing different crops in the same area in sequential seasons to improve soil health and prevent pests and diseases.",
-                imageResId = R.drawable.harvesthq,
+                imageResId = R.drawable.crops,
                 isDropdownVisible = isDropdownVisible,
                 onToggleDropdown = { isDropdownVisible = !isDropdownVisible }
             )
@@ -76,19 +76,25 @@ fun EducationContent() {
             DropdownText(
                 text = "Agroforestry:",
                 description = "Integrating trees and shrubs into agricultural landscapes to enhance environmental sustainability, biodiversity, and overall productivity.",
-                imageResId = R.drawable.harvesthqlogohrs,
+                imageResId = R.drawable.croprotation,
                 isDropdownVisible = isDropdownVisible,
                 onToggleDropdown = { isDropdownVisible = !isDropdownVisible }
             )
             DropdownText(
-                text = "Cover Crops",
+                text = "Cover Crops/Mulching",
                 description = "Plants grown to protect and enrich the soil during periods when the main crop is not growing, preventing erosion and improving soil fertility.",
-                imageResId = R.drawable.harvesthq,
+                imageResId = R.drawable.mulching,
                 isDropdownVisible = isDropdownVisible,
                 onToggleDropdown = { isDropdownVisible = !isDropdownVisible }
             )
 
-            // Add more DropdownText entries as needed
+            DropdownText(
+                text = "Drip Irrigation",
+                description = " is a type of micro-irrigation system that has the potential to save water and nutrients by allowing water to drip slowly to the roots of plants, either from above the soil surface or buried below the surface. The goal is to place water directly into the root zone and minimize evaporation.",
+                imageResId = R.drawable.drip,
+                isDropdownVisible = isDropdownVisible,
+                onToggleDropdown = { isDropdownVisible = !isDropdownVisible }
+            )
         }
     }
 }
