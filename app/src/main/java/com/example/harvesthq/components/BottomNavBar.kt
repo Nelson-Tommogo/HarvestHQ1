@@ -73,7 +73,7 @@ fun BottomNavComposable(navController: NavHostController) {
                                 when (index) {
                                     0 -> navController.navigate("Home")
                                     1 -> navController.navigate("shop")
-                                    2 -> navController.navigate("hqs")
+                                    2 -> navController.navigate("Education")
                                     3 -> navController.navigate("profile")
                                 }
                             },

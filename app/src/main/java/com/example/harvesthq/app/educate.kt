@@ -28,11 +28,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.harvesthq.R
 import com.example.harvesthq.navigation.Topbar
 
 @Composable
-fun Education() {
+fun Education(navController: NavController) {
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = colorResource(id = R.color.green1)
@@ -46,7 +48,6 @@ fun Education() {
         )
     }
 }
-
 @Composable
 fun EducationContent() {
     var isDropdownVisible by remember { mutableStateOf(false) }
@@ -72,7 +73,6 @@ fun EducationContent() {
                 isDropdownVisible = isDropdownVisible,
                 onToggleDropdown = { isDropdownVisible = !isDropdownVisible }
             )
-
             DropdownText(
                 text = "Agroforestry:",
                 description = "Integrating trees and shrubs into agricultural landscapes to enhance environmental sustainability, biodiversity, and overall productivity.",
@@ -98,7 +98,6 @@ fun EducationContent() {
         }
     }
 }
-
 @Composable
 fun DropdownText(
     text: String,
@@ -153,5 +152,6 @@ fun DropdownIcon(isDropdownVisible: Boolean, onToggleDropdown: () -> Unit) {
 @Preview
 @Composable
 fun EducationContentPreview() {
-    Education()
+    val navController = rememberNavController()
+    Education(navController = navController)
 }

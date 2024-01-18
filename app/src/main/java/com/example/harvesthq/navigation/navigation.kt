@@ -8,6 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.harvesthq.Auth.reset
+import com.example.harvesthq.app.Education
 import com.example.harvesthq.app.HomePage
 import com.example.harvesthq.components.BottomNavComposable
 import profilepicture
@@ -20,6 +21,7 @@ sealed class Screen(val route: String) {
     object Home : Screen("BottomNavBar")
     object homescreen : Screen("Home")
     object setting : Screen("profile")
+    object educate : Screen("Education")
 
 }
 
@@ -51,6 +53,9 @@ fun SetupNavigation(navController: NavHostController) {
         }
         composable(Screen.setting.route){
             profilepicture(navController = navController)
+        }
+        composable(Screen.educate.route){
+            Education(navController = navController)
         }
     }
 }
