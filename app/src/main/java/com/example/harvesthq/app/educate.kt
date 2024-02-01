@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
@@ -43,7 +44,11 @@ fun Education(navController: NavController) {
             modifier = Modifier.fillMaxSize(),
             content = {
                 Topbar()
-                EducationContent()
+                LazyColumn {
+                    item {
+                        EducationContent()
+                    }
+                }
             }
         )
     }
@@ -113,7 +118,7 @@ fun DropdownText(
         Image(
             painter = painterResource(id = imageResId),
             contentDescription = null,
-            modifier = Modifier.size(44.dp)
+            modifier = Modifier.size(100.dp)
         )
 
 
