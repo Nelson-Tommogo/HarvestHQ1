@@ -45,7 +45,7 @@ import com.example.harvesthq.R
 fun profilepicture(navController: NavHostController) {
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = colorResource(id = R.color.white)
+        color = colorResource(id = R.color.green1)
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -122,7 +122,7 @@ fun Picture() {
         ) {
             // Image
             Image(
-                painter = painterResource(id = R.drawable.profile), // Replace with your image resource
+                painter = painterResource(id = R.drawable.profile),
                 contentDescription = null,
                 modifier = Modifier
                     .size(120.dp)
@@ -140,13 +140,15 @@ fun Picture() {
                     text = "Name: Nelson Tommogo",
                     fontWeight = FontWeight.Bold,
                     fontSize = 18.sp,
-                    color = MaterialTheme.colorScheme.onSurface
+                    color = colorResource(id = R.color.white)
                 )
-                Text(
-                    text = "Email: nelson@example.com", // Replace with the actual email
-                    fontSize = 16.sp,
-                    color = MaterialTheme.colorScheme.onSurface
-                )
+
+                    Text(
+                        text = "Email: nelsontommogo9@gmailcom", // Replace with the actual email
+                        fontSize = 16.sp,
+                        color = colorResource(id = R.color.white)
+                    )
+
             }
         }
     }
@@ -161,7 +163,7 @@ fun RoundCard(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
         modifier = modifier
             .size(120.dp)
             .clip(CircleShape)
-            .background(color = colorResource(id = R.color.green1))
+            .background(color = colorResource(id = R.color.green))
             .padding(18.dp)
             .shadow(2.dp, shape = CircleShape),
         onClick = {
