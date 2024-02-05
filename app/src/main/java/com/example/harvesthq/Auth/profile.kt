@@ -114,15 +114,45 @@ fun Profile() {
 @Composable
 fun Picture() {
     RoundCard(modifier = Modifier.padding(16.dp)) {
-        Image(
-            painter = painterResource(id = R.drawable.profile), // Replace with your image resource
-            contentDescription = null,
+        Row(
             modifier = Modifier
-                .size(120.dp)
-                .clip(CircleShape)
-        )
+                .fillMaxWidth()
+                .padding(8.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            // Image
+            Image(
+                painter = painterResource(id = R.drawable.profile), // Replace with your image resource
+                contentDescription = null,
+                modifier = Modifier
+                    .size(120.dp)
+                    .clip(CircleShape)
+            )
+
+            // Text elements for Name and Email
+            Column(
+                modifier = Modifier
+                    .padding(start = 8.dp)
+                    .align(Alignment.CenterVertically),
+                horizontalAlignment = Alignment.End
+            ) {
+                Text(
+                    text = "Name: Nelson Tommogo",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 18.sp,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+                Text(
+                    text = "Email: nelson@example.com", // Replace with the actual email
+                    fontSize = 16.sp,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+            }
+        }
     }
 }
+
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
