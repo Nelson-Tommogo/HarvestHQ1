@@ -39,7 +39,7 @@ import com.example.harvesthq.R
 fun profilepicture(navController: NavHostController) {
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = colorResource(id = R.color.green1)
+        color = colorResource(id = R.color.white)
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -94,10 +94,10 @@ fun Profile() {
 fun Picture() {
     RoundCard(modifier = Modifier.padding(16.dp)) {
         Image(
-            painter = painterResource(id = R.drawable.harvesthqlogohrs), // Replace with your image resource
+            painter = painterResource(id = R.drawable.profile), // Replace with your image resource
             contentDescription = null,
             modifier = Modifier
-                .size(80.dp)
+                .size(120.dp)
                 .clip(CircleShape)
         )
     }
