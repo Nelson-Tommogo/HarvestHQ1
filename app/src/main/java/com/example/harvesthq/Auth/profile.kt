@@ -88,20 +88,20 @@ fun Profile() {
             ) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Start
+                    horizontalArrangement = Arrangement.Start // Align to the start (far left)
                 ) {
                     Icon(
-                        imageVector = Icons.Default.ExitToApp,
+                        imageVector = Icons.Default.ExitToApp, // Use built-in logout icon
                         contentDescription = "Logout Icon",
-                        modifier = Modifier.size(24.dp),
+                        modifier = Modifier.size(20.dp),
                         tint = colorResource(id = R.color.green11)
                     )
-                    Spacer(modifier = Modifier.width(8.dp))
+                    Spacer(modifier = Modifier.width(30.dp))
                     Text(
                         "Log Out",
-                        fontSize = 20.sp,
+                        fontSize = 16.sp,
                         fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(bottom = 16.dp),
+                        modifier = Modifier.padding(bottom = 9.dp),
                         color = colorResource(id = R.color.green11)
                     )
                 }
@@ -109,7 +109,6 @@ fun Profile() {
         }
     }
 }
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
