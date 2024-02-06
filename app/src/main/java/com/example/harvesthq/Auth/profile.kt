@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -22,7 +23,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -45,17 +45,28 @@ import com.example.harvesthq.R
 fun profilepicture(navController: NavHostController) {
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = colorResource(id = R.color.green1)
+        color = colorResource(id = R.color.green)
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
             content = {
-                Picture()
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Picture()
+                    DisplayText(name = "Nelson Tommogo", email = "nelsontommogo9@gmail.com")
+                }
                 Profile()
             }
         )
     }
 }
+
+
 
 
 @Composable
@@ -65,7 +76,7 @@ fun Profile() {
             .fillMaxSize()
             .statusBarsPadding()
             .navigationBarsPadding(),
-        color = MaterialTheme.colorScheme.background
+        color = colorResource(id = R.color.green)
     ){
         Column(
             modifier = Modifier
@@ -117,42 +128,46 @@ fun Picture() {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
+                .fillMaxHeight()
                 .padding(8.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            // Image
             Image(
                 painter = painterResource(id = R.drawable.profile),
                 contentDescription = null,
                 modifier = Modifier
                     .size(120.dp)
                     .clip(CircleShape)
+                    .background(colorResource(id = R.color.green1))
             )
 
-            // Text elements for Name and Email
-            Column(
-                modifier = Modifier
-                    .padding(start = 8.dp)
-                    .align(Alignment.CenterVertically),
-                horizontalAlignment = Alignment.End
-            ) {
-                Text(
-                    text = "Name: Nelson Tommogo",
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 18.sp,
-                    color = colorResource(id = R.color.white)
-                )
-
-                    Text(
-                        text = "Email: nelsontommogo9@gmailcom", // Replace with the actual email
-                        fontSize = 16.sp,
-                        color = colorResource(id = R.color.white)
-                    )
-
-            }
         }
     }
 }
+
+
+@Composable
+fun DisplayText(name: String, email: String) {
+    Column(
+        modifier = Modifier
+            .padding(start = 8.dp),
+        horizontalAlignment = Alignment.End
+    ) {
+        Text(
+            text = "Name: $name",
+            fontWeight = FontWeight.Bold,
+            fontSize = 18.sp,
+            color = colorResource(id = R.color.green1)
+        )
+
+        Text(
+            text = "Email: $email",
+            fontSize = 16.sp,
+            color = colorResource(id = R.color.green1)
+        )
+    }
+}
+
 
 
 
@@ -163,7 +178,7 @@ fun RoundCard(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
         modifier = modifier
             .size(120.dp)
             .clip(CircleShape)
-            .background(color = colorResource(id = R.color.green))
+            .background(color = colorResource(id = R.color.green1))
             .padding(18.dp)
             .shadow(2.dp, shape = CircleShape),
         onClick = {
