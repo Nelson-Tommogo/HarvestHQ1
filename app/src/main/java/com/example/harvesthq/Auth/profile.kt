@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material3.ButtonDefaults
@@ -45,7 +46,7 @@ import com.example.harvesthq.R
 fun profilepicture(navController: NavHostController) {
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = colorResource(id = R.color.green)
+        color = colorResource(id = R.color.white)
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -76,7 +77,7 @@ fun Profile() {
             .fillMaxSize()
             .statusBarsPadding()
             .navigationBarsPadding(),
-        color = colorResource(id = R.color.green)
+        color = colorResource(id = R.color.white)
     ){
         Column(
             modifier = Modifier
@@ -177,7 +178,7 @@ fun RoundCard(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
     Card(
         modifier = modifier
             .size(120.dp)
-            .clip(CircleShape)
+            .clip(CutCornerShape(30.dp))
             .background(color = colorResource(id = R.color.green1))
             .padding(18.dp)
             .shadow(2.dp, shape = CircleShape),
