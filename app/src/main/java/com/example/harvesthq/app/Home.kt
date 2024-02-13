@@ -183,7 +183,6 @@ fun Adverts() {
         ) {
             Text("Adverts")
 
-            // Nested Cards
             Column(
                 modifier = Modifier
                     .fillMaxWidth()

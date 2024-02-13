@@ -77,16 +77,6 @@ fun Topbar() {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text("Search")
-                    Icon(
-                        imageVector = Icons.Default.Search,
-                        contentDescription = "Search product",
-                        modifier = Modifier
-                            .clickable {
-                                // Handle icon click
-                            }
-                            .size(20.dp)
-                            .padding(start = 4.dp) // Add padding to separate Text and Icon
-                    )
                 }
             },
             keyboardOptions = KeyboardOptions.Default.copy(
@@ -111,7 +101,7 @@ fun Topbar() {
                 .clickable {
 
                 }
-                .size(20.dp)
+                .size(36.dp)
         )
 
         Icon(
@@ -121,7 +111,7 @@ fun Topbar() {
                 .clickable {
 
                 }
-                .size(20.dp)
+                .size(36.dp)
         )
     }
 }
