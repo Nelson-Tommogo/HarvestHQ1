@@ -3,10 +3,8 @@ import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -30,9 +28,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -52,34 +48,45 @@ fun Topbar() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(100.dp)
+            .height(150.dp)
             .background(color = colorResource(id = R.color.homecards))
             .padding(16.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(color = Color.Gray)
-        ) {
-            Icon(
-                painter = painterResource(id = R.drawable.harvesthqlogo),
-                contentDescription = "Harvest Logo",
-                modifier = Modifier
-                    .size(150.dp)
-                    .padding(16.dp)
-            )
-        }
+//        Box(
+//            modifier = Modifier
+//                .width(50.dp)
+//                .background(color = Color.Gray)
+//        ) {
+//            Icon(
+//                painter = painterResource(id = R.drawable.harvesthqlogo),
+//                contentDescription = "Harvest Logo",
+//                modifier = Modifier
+//                    .size(150.dp)
+//                    .padding(16.dp)
+//            )
+//        }
 
 
         OutlinedTextField(
             value = searchText,
             onValueChange = { searchText = it },
             label = {
-                Row {
-
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
                     Text("Search")
+                    Icon(
+                        imageVector = Icons.Default.Search,
+                        contentDescription = "Search product",
+                        modifier = Modifier
+                            .clickable {
+                                // Handle icon click
+                            }
+                            .size(20.dp)
+                            .padding(start = 4.dp) // Add padding to separate Text and Icon
+                    )
                 }
             },
             keyboardOptions = KeyboardOptions.Default.copy(
@@ -95,6 +102,7 @@ fun Topbar() {
                 .weight(1f)
                 .padding(end = 16.dp)
         )
+
 
         Icon(
             imageVector = Icons.Default.Search,
