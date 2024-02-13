@@ -57,14 +57,14 @@ fun Topbar() {
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
-            painter = painterResource(id = R.drawable.harvesthqlogohrs),
+            painter = painterResource(id = R.drawable.harvesthqlogo),
             contentDescription = "Harvest Logo",
             modifier = Modifier.size(120.dp)
         )
 
         OutlinedTextField(
-            value = email,
-            onValueChange = { email = it },
+            value = searchText,
+            onValueChange = { searchText = it },
             label = {
                 Row {
                     Icon(
@@ -86,8 +86,8 @@ fun Topbar() {
                 unfocusedLabelColor = colorResource(id = R.color.green11)
             ),
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = 16.dp)
+                .weight(1f)
+                .padding(end = 16.dp)
         )
 
         Icon(
