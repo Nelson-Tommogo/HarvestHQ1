@@ -1,7 +1,6 @@
 package com.example.harvesthq.app
 
 import android.annotation.SuppressLint
-import android.telecom.Call
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,6 +17,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -37,6 +37,7 @@ import com.example.harvesthq.apiservices.WeatherResponse
 import com.example.harvesthq.navigation.Topbar
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Call
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -51,7 +52,7 @@ fun HomePage(navController: NavHostController) {
                 Topbar()
                 Adverts()
                 Adds()
-                HHQP()
+                HHQP(apiKey ="4f0f69ddd613951d8005afa5d12fdb97")
                 FOP()
                 ADDS()
             }
@@ -80,8 +81,11 @@ fun HHQP(apiKey: String) {
     var isError by remember { mutableStateOf(false) }
 
     // Trigger API call when the composable is first recomposed
-    LaunchedEffect(true) {
+    DisposableEffect(Unit) {
         getWeatherData(apiKey, cityName)
+        onDispose {
+            // Cleanup logic, if needed
+        }
     }
 
     Card(
@@ -150,11 +154,6 @@ fun getWeatherData(apiKey: String, city: String) {
         }
     })
 }
-
-
-// The getWeatherData function remains the same as in the previous example
-
-
 @Composable
 fun ButtonWithText(text: String, backgroundColor: Int) {
     ElevatedButton(
